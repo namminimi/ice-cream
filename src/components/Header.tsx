@@ -6,10 +6,10 @@ const HeaderDiv = styled.header`
     width:100%;
     background-color: #fff;
     position: fixed;
-    height: 150px;
     top:0;
     left: 0;
     font-size: 18px;
+    z-index: 2;
     .logo{
         width: 10%;
         margin: 8px auto;

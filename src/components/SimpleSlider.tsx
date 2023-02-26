@@ -49,9 +49,10 @@ export default class SimpleSlider extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: false,
+      
     };
     return (
-      <SlideStyle>
+      <SlideStyle className="mainSlide">
         <Slider {...settings}>
           <FirstDiv>
             <h3><FirstImg/></h3>

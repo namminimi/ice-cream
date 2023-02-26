@@ -1,0 +1,21 @@
+#bg3{
+    background-color: lightblue;
+    width: 100%;
+    height: 100vh;
+    padding-top: 500px;
+}
+
+
+.sc3{
+
+    color: black;
+    text-align: center;
+    opacity: 0;
+    transition: 1s;
+    transform: rotate(-729deg); 
+}
+
+.scChange {
+    opacity: 1;
+    transform: rotate(0);
+}

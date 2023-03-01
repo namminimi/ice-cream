@@ -1,14 +1,10 @@
 import React from 'react';
 import './App.css';
-import Contant1 from './components/Contant1';
-import Contant2 from './components/Contant2';
-import Contant3 from './components/Contant3';
+import Footer from './components/Footer';
 import Header from './components/Header';
-//import MainBlock from './components/MainBlock';
-import SimpleSlider from './components/SimpleSlider';
-
-
-
+import Main from './pages/Main';
+import { Routes, Route } from 'react-router-dom';
+import Join from './pages/Join';
 
 
 function App() {
@@ -16,10 +12,11 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <SimpleSlider/>
-      <Contant1/>
-      <Contant2/>
-      <Contant3/>
+      <Routes>
+        <Route path='/' element={<Main/>}/>
+        <Route path='/join' element={<Join/>}/>
+      </Routes>
+      <Footer/>
     </div>
   );
 }

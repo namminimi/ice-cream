@@ -1,17 +1,8 @@
 import React, { Component } from "react";
-import { useInView } from "react-intersection-observer";
 import Slider from "react-slick";
 import "./IceSlide.scss"
 
-/* const {ref, inView, entry} = useInView({
-  threshold:0.1,
-})
-console.log(ref)
-if(inView){
-  entry?.target.classList.add("moreUp")
-}else{
-  entry?.target.classList.remove("moreUp")
-} */
+
 
 export default class IceSlide extends Component {
   render() {
@@ -30,22 +21,22 @@ export default class IceSlide extends Component {
       <div className="moreIce" >
         <Slider {...settings}>
           <div>
-            <h3><img src="./images/ice2.png"></img></h3>
+            <h3><img src="./images/ice-product1-removebg-preview.png"></img></h3>
           </div>
           <div>
-            <h3><img src="./images/ice2.png"></img></h3>
+            <h3><img src="./images/ice-product3-removebg-preview.png"></img></h3>
           </div>
           <div>
-            <h3><img src="./images/ice2.png"></img></h3>
+            <h3><img src="./images/ice-product4-removebg-preview.png"></img></h3>
           </div>
           <div>
-            <h3><img src="./images/ice2.png"></img></h3>
+            <h3><img src="./images/ice-product5-removebg-preview.png"></img></h3>
           </div>
           <div>
-            <h3><img src="./images/ice2.png"></img></h3>
+            <h3><img src="./images/ice-product6-removebg-preview.png"></img></h3>
           </div>
           <div>
-            <h3><img src="./images/ice2.png"></img></h3>
+            <h3><img src="./images/ice-product7-removebg-preview.png"></img></h3>
           </div>
         </Slider>
       </div>

@@ -8,6 +8,7 @@ import styled from "styled-components";
 
 const SlideStyle = styled.div`
   margin-top: 154px; 
+  height: 856px;
 `
 const FirstDiv = styled.div`
   background-color: #FAB363;
@@ -21,7 +22,7 @@ const SecondDiv = styled.div`
 const FirstImg = styled.img`
   text-align: center;
   width: 100%;
-  height: 855px;
+  height: 858px;
   background-image: url("images/banner2.png");
   background-position: top center;
   background-repeat: no-repeat;
@@ -31,7 +32,7 @@ const FirstImg = styled.img`
 const SecondImg = styled.img`
   text-align: center;
   width: 100%;
-  height: 855px;
+  height:858px;
   background-image: url("images/banner7.jpg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -45,26 +46,26 @@ export default class SimpleSlider extends Component {
     const settings = {
       dots: true,
       infinite: true,
-      speed: 500,
+      speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: false,
+      autoplay: true,
       
     };
     return (
       <SlideStyle className="mainSlide">
         <Slider {...settings}>
           <FirstDiv>
-            <h3><FirstImg/></h3>
+              <FirstImg/>
           </FirstDiv>
           <SecondDiv>
-            <h3><SecondImg/></h3>
+              <SecondImg/>
           </SecondDiv>
           <div>
-            <h3><img src="images/banner4.jpg" alt="" width="100%" height="855px"/></h3>
+              <img src="images/banner4.jpg" alt="" width="100%" height="856px"/>
           </div>
           <div>
-            <h3><img src="images/banner5.jpg" alt="" width="100%" height="855px"/></h3>
+              <img src="images/banner5.jpg" alt="" width="100%" height="856px"/>
           </div>
         </Slider>
       </SlideStyle>

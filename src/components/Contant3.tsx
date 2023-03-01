@@ -1,26 +1,17 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
 import "./Contant3.scss"
-
-
-
+import Mapblock from './Mapblock';
 
 
 
 const Contant3 = () => {
-    const {ref, inView, entry} = useInView({
-        threshold:0,
-    })
-    if(inView){
-        entry?.target.classList.add("scChange")
-    }else{
-        entry?.target.classList.remove("scChange")
-    }
+    
     return (
-        <div id="bg3">
-            <div className='sc3' ref={ref}>
-                <h1>쓔우우우우우우우우ㅜ웅</h1>
+        <div id="bg3" className='inner'>
+            <div className='sc3'>
+                <h2>매장 찾기</h2>
             </div>
+            <Mapblock/>
         </div>
     );
 };

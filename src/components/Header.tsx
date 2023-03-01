@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 //import "./Header.scss"
+
 
 const HeaderDiv = styled.header`
     width:100%;
@@ -50,17 +52,17 @@ const Header = () => {
     return (
         <HeaderDiv>
             <div className='logo'>
-                <img src="images/logo4.png"></img>
+                <Link to="/"><img src="images/logo4.png"></img></Link>
             </div>
             <NavDiv >
                 <ul className='menu'>
-                    <li>Home</li>
+                    <li><Link to="/">Home</Link></li>
                     <li>Menu</li>
                     <li>공지사항</li>
                 </ul>
                 
                 <ul className='join'>
-                    <li>회원가입</li>
+                    <li><Link to="/join">회원가입</Link></li>
                     <li>로그인</li>
                 </ul>
             </NavDiv>

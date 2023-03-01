@@ -19,7 +19,6 @@ const Contant1 = () => {
         <div id='bg1'>
             <div className='sc1' ref={ref}>
                 <h1>사계절 즐겨먹는 아이스크림</h1>
-                
                 <br/>
                 <h1>다양한 아이스크림들이 있어요</h1>
                 <br/>

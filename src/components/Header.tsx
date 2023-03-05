@@ -37,6 +37,37 @@ const NavDiv = styled.div`
         li{
             list-style: none;
         }
+        .navList {
+            position: relative;
+            width: 100px;
+            text-align: center;
+            cursor: pointer;
+            ul{
+                width: 100px;
+                position: absolute;
+                opacity: 0;
+                z-index: 1;
+                top: -20px;
+                left: 0;
+                transition: 0.8s;
+                li{
+                    padding: 10px 5px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #ccc;
+                        color:black;
+                    }
+                }
+            }
+            &:hover{
+            }
+            &:hover ul{
+                background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+                opacity: 1;
+                top: 35px;
+                }
+        }
     }
     .join{
         display: flex;
@@ -57,13 +88,18 @@ const Header = () => {
             <NavDiv >
                 <ul className='menu'>
                     <li><Link to="/">Home</Link></li>
-                    <li>Menu</li>
+                    <li className='navList'>
+                        <div>Menu</div> 
+                        <ul>
+                            <li>아이스크림</li>
+                            <li>음료</li>
+                        </ul>
+                    </li>
                     <li>공지사항</li>
                 </ul>
-                
                 <ul className='join'>
                     <li><Link to="/join">회원가입</Link></li>
-                    <li>로그인</li>
+                    <li><Link to="/login">로그인</Link></li>
                 </ul>
             </NavDiv>
         </HeaderDiv>

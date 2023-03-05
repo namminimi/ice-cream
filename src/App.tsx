@@ -4,7 +4,8 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './pages/Main';
 import { Routes, Route } from 'react-router-dom';
-import Join from './pages/Join';
+import Join from './pages/member/Join';
+import Login from './pages/member/Login';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main/>}/>
         <Route path='/join' element={<Join/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
       <Footer/>
     </div>

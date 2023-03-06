@@ -60,8 +60,6 @@ const NavDiv = styled.div`
                     }
                 }
             }
-            &:hover{
-            }
             &:hover ul{
                 background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
                 opacity: 1;
@@ -79,6 +77,7 @@ const NavDiv = styled.div`
         }
     }
 `;
+
 const Header = () => {
     return (
         <HeaderDiv>
@@ -86,7 +85,7 @@ const Header = () => {
                 <Link to="/"><img src="images/logo4.png"></img></Link>
             </div>
             <NavDiv >
-                <ul className='menu'>
+                <ul className='menu' >
                     <li><Link to="/">Home</Link></li>
                     <li className='navList'>
                         <div>Menu</div> 

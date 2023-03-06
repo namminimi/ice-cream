@@ -9,16 +9,19 @@
     }
     .joinForm{
         padding: 20px;
-        width: 700px;
+        width: 900px;
         height: 700px;
         .joinTable {
-            line-height: 50px;
+            line-height: 35px;
+            
             width: 100%;
             tr{
+                
                 td{
                     &:nth-child(1){
                         font-size: 20px;
                         font-weight: bold;
+                        
                     }
                     &:nth-child(2){
                         padding-left: 80px;
@@ -45,7 +48,13 @@
                         }
                     }
                 }
-            }   
+            } 
+            .addForm {
+                vertical-align: top;
+                button {
+                    vertical-align: top;
+                }
+            }  
         }
     }
     .commendText{

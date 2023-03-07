@@ -8,8 +8,16 @@ import "./Join.scss"
 const Join = () => {
 
     const [formData, setFormData] = useState({
+        m_name:"",
+        m_password:"",
+        m_id:"",
+        m_nickname:"",
+        m_birth:"",
+        m_gender:"",
+        m_phone:"",
         m_add1: "",
-        m_add2: ""
+        m_add2: "",
+        m_comnick:""
     })
 
     const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {

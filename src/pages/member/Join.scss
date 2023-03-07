@@ -9,25 +9,24 @@
     }
     .joinForm{
         padding: 20px;
-        width: 900px;
+        width: 650px;
         height: 700px;
         .joinTable {
-            line-height: 35px;
-            
+            line-height: 40px;
             width: 100%;
             tr{
-                
                 td{
                     &:nth-child(1){
                         font-size: 20px;
                         font-weight: bold;
-                        
+                        width: 20%;
                     }
                     &:nth-child(2){
                         padding-left: 80px;
+                        width: 60%;
                     }
                     .inputText{
-                        width: 350px;
+                        width: 250px;
                         height: 30px;
                         padding-left: 5px;
                         outline: 0;
@@ -58,6 +57,25 @@
         }
     }
     .commendText{
+        margin-top: 30px;
         color: red
+    }
+    .joinFormBtn{
+        text-align: right;
+        button {
+            margin-left: 10px;
+            width:100px;
+            height:30px;
+            background-color: #4D455D;
+            color:#fff;
+            border-radius: 5px;
+            border: 0;
+            outline: 0;
+            vertical-align: middle;
+            cursor: pointer;
+            &:hover{
+                background-color: #E96479;
+            }
+        }
     }
 }

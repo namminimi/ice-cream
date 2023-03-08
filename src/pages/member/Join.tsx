@@ -1,12 +1,16 @@
+import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PopupDom from '../../components/PopupDom';
 import PopupPage from '../../components/PopupPage';
+import { API_URL } from '../../config/apirul';
 import "./Join.scss"
 
 
 
 const Join = () => {
 
+    const navigate = useNavigate()
     const [formData, setFormData]  = useState({
         m_name:"",
         m_password:"",
@@ -21,6 +25,10 @@ const Join = () => {
         m_comnick:""
     })
 
+    const textArea = {
+        lineHeight: "20px"
+    }
+    //메세지전달
     const [isNameMessage, setNameMessage] = useState("")
     const [isPassMessage, setPassMessage] = useState("")
     const [isPassChMessage, setPassChMessage] = useState("")
@@ -28,6 +36,26 @@ const Join = () => {
     const [isNickMessage, setNickMessage] = useState("")
     const [isbirMessage, setbirMessage] = useState("")
     const [isPhoneMessage, setPhoneMessage] = useState("")
+    const [isaddMessage, setaddMessage] = useState("")
+
+    //중복확인 체크 요청 상태
+    type CheckType = {
+        isIdch: boolean,
+        isNickCH: boolean,
+        isComNick: boolean
+    }
+
+    const [isCheck, setCheck] = useState({
+        isIdCh: false,
+        isNickCh: false,
+        isComNick: false
+    })
+    //중복체크 확인완료
+    const [isCheckOk, setCheckOk] = useState({
+        isIdChOk: false,
+        isNickChOk: false,
+        isComNickOk: false
+    })
 
     //이름
     const nameInput = /^[a-zA-Z가-힣]{2,10}$/
@@ -40,9 +68,11 @@ const Join = () => {
     //이메일
     const emailInput = /^[a-zA-Z0-9]{2,30}$/
     //생년월일
-    const birthInput = /^[0-9]{8,9}$/
+    const birthInput = /^[0-9]{7,8}$/
     //전화번호
     const phoneInput = /^[0-9]{10,11}$/
+    //상세주소
+    const addInput = /^[a-zA-Z가-핳 \\d`~!@#$%^&*()-_=+]{1,100}$/
     
 
     const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -68,7 +98,7 @@ const Join = () => {
         }
 
         if(name === "m_passwordCh"){ //비밀번호확인 유효성 검사
-            if(formData.m_password !== formData.m_passwordCh){
+            if(formData.m_password !== value){
                 setPassChMessage("비밀번호가 일치하지 않습니다")
             }else{
                 setPassChMessage("비밀번호가 일치합니다")
@@ -78,16 +108,32 @@ const Join = () => {
         if(name === "m_id"){ //아이디 유효성 검사
             if(!idInput.test(formData.m_id)){
                 setIdMessage("4-12사이 대소문자 또는 숫자만 입력해 주세요!")
+                setCheck({
+                    ...isCheck,
+                    isIdCh: false
+                })
             }else{
                 setIdMessage("중복확인 해주세요")
+                setCheck({
+                    ...isCheck,
+                    isIdCh: true
+                })
             } 
         }
 
         if(name === "m_nickname"){ //유저닉네임 유효성 검사
             if(!nickNameInput.test(formData.m_nickname)){
                 setNickMessage("닉네임은 2자~10자이하로 입력해주세요")
+                setCheck({
+                    ...isCheck,
+                    isNickCh: false
+                })
             }else{
                 setNickMessage("중복확인 해주세요")
+                setCheck({
+                    ...isCheck,
+                    isNickCh: true
+                })
             } 
         }
 
@@ -99,13 +145,84 @@ const Join = () => {
             } 
         }
 
-        if(name === "m_phone"){ //생년월일 유효성 검사
+        if(name === "m_phone"){ //전화번호 유효성 검사
             if(!phoneInput.test(formData.m_phone)){
                 setPhoneMessage("'-'제외한 숫자 10~11자 입력해주세요")
             }else{
                 setPhoneMessage("")
             } 
         }
+
+        if(name === "m_add2"){ //상세주소 유효성 검사
+            if(!addInput.test(formData.m_add2)){
+                setaddMessage("상세주소 입력해주세요")
+            }else{
+                setaddMessage("")
+            } 
+        }
+
+        if(name === "m_comnick"){ //추천아이디 유효성 검사
+            if(formData.m_comnick === ""){
+                setCheck({
+                    ...isCheck,
+                    isComNick: false
+                })
+            }else{
+                setCheck({
+                    ...isCheck,
+                    isComNick: true
+                })
+            } 
+        }
+    }
+
+    //아이디 중복확인
+    const idCheck = () => {
+        //아이디
+        if(isCheck.isIdCh && formData.m_id !== "") {
+            console.log('아이디 중복확인')
+            axios.get(`${API_URL}/check/${formData.m_id}`)
+            .then(res=>{
+                console.log(res)
+                if(res.data.m_id == formData.m_id) {
+                    setIdMessage("아이디 중복입니다. 다른 아이디를 입력해주세요")
+                }else {
+                    setIdMessage("사용가능한 아이디입니다")
+                    setCheckOk({
+                        ...isCheckOk,
+                        isIdChOk: true
+                    })
+                    setCheck({
+                        ...isCheck,
+                        isIdCh: false
+                    })
+                }
+            })
+            .catch(e=>console.log(e))
+        }else{
+            alert("아이디를 입력해주세요")
+        }
+        //닉네임
+        /* if(isCheck.isIdCh) {
+            console.log('아이디 중복확인')
+            axios.get(`${API_URL}/check/${formData.m_id}`)
+            .then(res=>{
+                console.log(res.data.id)
+                if(res.data.id === formData.m_id) {
+                    setIdMessage("아이디 중복입니다. 다른 아이디를 입력해주세요")
+                }else {
+                    setIdMessage("사용가능한 아이디입니다")
+                    setCheckOk({
+                        ...isCheckOk,
+                        isIdChOk: true
+
+                    })
+                }
+            })
+            .catch(e=>console.log(e))
+        }else{
+            alert("아이디를 입력해주세요")
+        } */
     }
     
     
@@ -134,18 +251,28 @@ const Join = () => {
 
     const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-       /*  m_name:"",
-        m_password:"",
-        m_passwordCh:"",
-        m_id:"",
-        m_nickname:"",
-        m_birth:"",
-        m_gender:"",
-        m_phone:"",
-        m_add1: "",
-        m_add2: "",
-        m_comnick:"" */
-        if(formData.m_name !== "" && formData.m_password !== "" && formData.m_password !== "" ){}
+        if(formData.m_name !== "" && formData.m_password !== "" && formData.m_passwordCh !== "" 
+        && formData.m_id !== "" && formData.m_nickname !== "" && formData.m_birth !== ""
+        && formData.m_gender !== "" && formData.m_phone !== ""  && formData.m_add1 !== "" && formData.m_add2 !== "" ){
+            runJoin()
+        }else {
+            alert("입력란에 입력해주세요")
+        }
+    }
+    const runJoin = () => {
+        console.log("가입버튼")
+        axios.post(`${API_URL}/join`, formData)
+        .then(res=>{
+            console.log(res)
+            console.log("등록완료")
+            alert("회원가입완료")
+            navigate('/login')
+        })
+        .catch(e=>{
+            console.log("에러발생")
+            console.log(e)
+        })
+        
     }
 
     return (
@@ -157,49 +284,67 @@ const Join = () => {
                         <tbody>
                             <tr>
                                 <td>이름</td>
-                                <td><input className='inputText' name="m_name " value={formData.m_name} type="text" onChange={onChange}/></td>
+                                <td>
+                                    <input className='inputText' name="m_name" value={formData.m_name} type="text" onChange={onChange}/>
+                                    <div className='message' style={{...textArea}}>{isNameMessage}</div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>아이디</td>
                                 <td>
                                     <input className='inputText' name="m_id" value={formData.m_id} type="text" onChange={onChange}/>
-                                    <button>중복확인</button>
+                                    <button type="button" onClick={idCheck}>중복확인</button>
+                                    <div className='message' style={{...textArea}}>{isIdMessage}</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>닉네임</td>
                                 <td>
                                     <input className='inputText' name="m_nickname" value={formData.m_nickname} type="text" onChange={onChange}/>
-                                    <button>중복확인</button>
+                                    <button type="button">중복확인</button>
+                                    <div className='message' style={{...textArea}}>{isNickMessage}</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>비밀번호</td>
-                                <td><input className='inputText' name="m_password" value={formData.m_password} type="text" onChange={onChange}/></td>
+                                <td>
+                                    <input className='inputText' name="m_password" value={formData.m_password} type="password" onChange={onChange}/>
+                                    <div className='message' style={{...textArea}}>{isPassMessage}</div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>비밀번호확인</td>
-                                <td><input className='inputText' name='m_passwordCh' value={formData.m_passwordCh} type="text" onChange={onChange}/></td>
+                                <td>
+                                    <input className='inputText' name='m_passwordCh' value={formData.m_passwordCh} type="password" onChange={onChange}/>
+                                    <div className='message' style={{...textArea}}>{isPassChMessage}</div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>생년월일</td>
-                                <td><input className='inputText' name="m_birth" value={formData.m_birth} type="text" placeholder='"-"를 제외한 생년월일 8자 입력해주세요. ex)19900513' onChange={onChange}/></td>
+                                <td>
+                                    <input className='inputText' name="m_birth" value={formData.m_birth} type="text" placeholder='"-"를 제외한 생년월일 8자 입력해주세요. ex)19900513' onChange={onChange}/>
+                                    <div className='message' style={{...textArea}}>{isbirMessage}</div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>성별</td>
-                                <td>남 <input className='inputRadio' name="m_gender" value={formData.m_gender} type="radio" onChange={onChange}/> 여 <input className='inputRadio' name="m_gender" value={formData.m_gender} type="radio" onChange={onChange}/></td>
+                                <td>남 <input className='inputRadio' name="m_gender" value="남" type="radio" onChange={onChange}/> 여 <input className='inputRadio' name="m_gender" value="여" type="radio" onChange={onChange}/></td>
                             </tr>
                             <tr>
                                 <td>전화번호</td>
-                                <td><input className='inputText' name="m_phone" value={formData.m_phone} type="text" placeholder='"-"를 제외한 숫자를 입력해주세요.' onChange={onChange}/></td>
+                                <td>
+                                    <input className='inputText' name="m_phone" value={formData.m_phone} type="text" placeholder='"-"를 제외한 숫자를 입력해주세요.' onChange={onChange}/>
+                                    <div className='message' style={{...textArea}}>{isPhoneMessage}</div>
+                                </td>
                             </tr>
                             <tr className='addForm'>
                                 <td>주소</td>
                                 <td>
                                     <input className='inputText' name='m_add1' type="text" value={formData.m_add1} onChange={onChange}/>
-                                    <button onClick={openPostCode}>우편번호 검색</button>
+                                    <button type="button" onClick={openPostCode}>우편번호 검색</button>
                                     <input className='inputText' name='m_add2' type="text" value={formData.m_add2} onChange={onChange}  placeholder="상세주소"/>
-                                    <button className='postCode_btn' onClick={()=>{closePostCode()}}>입력</button>
+                                    {isPopupOpen && (<button className='postCode_btn' onClick={()=>{closePostCode()}}>입력</button>)}
+                                    <div className='message' style={{...textArea}}>{isaddMessage}</div>
                                     <div id='popupDom'>
                                         {isPopupOpen && (
                                             <PopupDom>
@@ -213,7 +358,7 @@ const Join = () => {
                                 <td>추천인</td>
                                 <td>
                                     <input className='inputText' name="m_comnick" value={formData.m_comnick} onChange={onChange} type="text"/>
-                                    <button>추천인 확인</button>
+                                    <button type="button">추천인 확인</button>
                                 </td>
                             </tr>
                         </tbody>

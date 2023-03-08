@@ -14,11 +14,11 @@ function App() {
     <div className="App">
       <Header/>
       <Routes>
-        <Route path='/' element={<Main/>}/>
+        <Route path='/' element={<><Main/><Footer/></>}/>
         <Route path='/join' element={<Join/>}/>
         <Route path='/login' element={<Login/>}/>
       </Routes>
-      <Footer/>
+      
     </div>
   );
 }

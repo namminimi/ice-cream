@@ -6,9 +6,9 @@ type popupPageType = {
     onAddData: (data: any) => void
 }
 const PopupPage = ({onAddData}: popupPageType) => {
-    console.log(111)
+    //console.log(111)
     const handleComplete = (data:any) => {
-        console.log(333)
+        //console.log(333)
         console.log(data)
         let fullAddress = data.address;
         let extraAddress = '';
@@ -33,8 +33,8 @@ const PopupPage = ({onAddData}: popupPageType) => {
         top: "65%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        width: "600px",
-        height: "600px",
+        width: "400px",
+        height: "400px",
         border: "2px solid #666"
     }
     return (

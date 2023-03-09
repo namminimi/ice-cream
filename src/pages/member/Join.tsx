@@ -8,10 +8,24 @@ import "./Join.scss"
 
 
 
-const Join = () => {
 
+
+const Join = () => {
+    type formDataType = {
+        m_name: string,
+        m_password: string,
+        m_passwordCh: string,
+        m_id: string,
+        m_nickname: string,
+        m_birth: string,
+        m_gender: string,
+        m_phone: string,
+        m_add1: string,
+        m_add2: string,
+        m_comnick: string
+    }
     const navigate = useNavigate()
-    const [formData, setFormData]  = useState({
+    const [formData, setFormData]  = useState<formDataType>({
         m_name:"",
         m_password:"",
         m_passwordCh:"",
@@ -29,29 +43,37 @@ const Join = () => {
         lineHeight: "20px"
     }
     //메세지전달
-    const [isNameMessage, setNameMessage] = useState("")
-    const [isPassMessage, setPassMessage] = useState("")
-    const [isPassChMessage, setPassChMessage] = useState("")
-    const [isIdMessage, setIdMessage] = useState("")
-    const [isNickMessage, setNickMessage] = useState("")
-    const [isbirMessage, setbirMessage] = useState("")
-    const [isPhoneMessage, setPhoneMessage] = useState("")
-    const [isaddMessage, setaddMessage] = useState("")
+    const [isNameMessage, setNameMessage] = useState<string>("")
+    const [isPassMessage, setPassMessage] = useState<string>("")
+    const [isPassChMessage, setPassChMessage] = useState<string>("")
+    const [isIdMessage, setIdMessage] = useState<string>("")
+    const [isNickMessage, setNickMessage] = useState<string>("")
+    const [isbirMessage, setbirMessage] = useState<string>("")
+    const [isPhoneMessage, setPhoneMessage] = useState<string>("")
+    const [isaddMessage, setaddMessage] = useState<string>("")
+    const [isComNickMessage, setComNickMessage] = useState<string>("")
 
     //중복확인 체크 요청 상태
     type CheckType = {
-        isIdch: boolean,
-        isNickCH: boolean,
+        isIdCh: boolean,
+        isNickCh: boolean,
         isComNick: boolean
     }
 
-    const [isCheck, setCheck] = useState({
+    //중복체크 확인완료 상태
+    type CheckOkType = {
+        isIdChOk: boolean,
+        isNickChOk: boolean,
+        isComNickOk: boolean
+    }
+
+    const [isCheck, setCheck] = useState<CheckType>({
         isIdCh: false,
         isNickCh: false,
         isComNick: false
     })
     //중복체크 확인완료
-    const [isCheckOk, setCheckOk] = useState({
+    const [isCheckOk, setCheckOk] = useState<CheckOkType>({
         isIdChOk: false,
         isNickChOk: false,
         isComNickOk: false
@@ -202,27 +224,60 @@ const Join = () => {
         }else{
             alert("아이디를 입력해주세요")
         }
-        //닉네임
-        /* if(isCheck.isIdCh) {
-            console.log('아이디 중복확인')
-            axios.get(`${API_URL}/check/${formData.m_id}`)
+        
+    }
+    //닉네임 중복확인
+    const nickNameCheck = () =>{
+        if(isCheck.isNickCh && formData.m_nickname !== "") {
+            console.log('닉네임 중복확인')
+            axios.get(`${API_URL}/check/${formData.m_nickname}`)
             .then(res=>{
-                console.log(res.data.id)
-                if(res.data.id === formData.m_id) {
-                    setIdMessage("아이디 중복입니다. 다른 아이디를 입력해주세요")
+                console.log(res)
+                if(res.data.m_nickname == formData.m_nickname) {
+                    setNickMessage("사용불가능한 닉네임입니다. 다른 닉네임을 입력해주세요")
                 }else {
-                    setIdMessage("사용가능한 아이디입니다")
+                    setNickMessage("사용가능한 닉네임입니다")
                     setCheckOk({
                         ...isCheckOk,
-                        isIdChOk: true
-
+                        isNickChOk: true
+                    })
+                    setCheck({
+                        ...isCheck,
+                        isNickCh: false
                     })
                 }
             })
             .catch(e=>console.log(e))
         }else{
-            alert("아이디를 입력해주세요")
-        } */
+            alert("닉네임을 입력해주세요")
+        }
+    }
+
+    //등록된 추천인 확인
+    const comNickNameCheck = () =>{
+        if(isCheck.isComNick && formData.m_comnick !== "") {
+            console.log('추천닉네임 확인')
+            axios.get(`${API_URL}/check/${formData.m_comnick}`)
+            .then(res=>{
+                console.log(res)
+                if(res.data.m_id !== formData.m_comnick) {
+                    setComNickMessage("해당아이디는 없습니다")
+                }else {
+                    setComNickMessage("아이디가 확인되었습니다")
+                    setCheckOk({
+                        ...isCheckOk,
+                        isComNickOk: true
+                    })
+                    setCheck({
+                        ...isCheck,
+                        isComNick: false
+                    })
+                }
+            })
+            .catch(e=>console.log(e))
+        }else{
+            alert("추천하실 닉네임을 입력해주세요")
+        }
     }
     
     
@@ -251,13 +306,14 @@ const Join = () => {
 
     const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if(formData.m_name !== "" && formData.m_password !== "" && formData.m_passwordCh !== "" 
+        /* if(formData.m_name !== "" && formData.m_password !== "" && formData.m_passwordCh !== "" 
         && formData.m_id !== "" && formData.m_nickname !== "" && formData.m_birth !== ""
         && formData.m_gender !== "" && formData.m_phone !== ""  && formData.m_add1 !== "" && formData.m_add2 !== "" ){
             runJoin()
         }else {
             alert("입력란에 입력해주세요")
-        }
+        } */
+        runJoin()
     }
     const runJoin = () => {
         console.log("가입버튼")
@@ -301,7 +357,7 @@ const Join = () => {
                                 <td>닉네임</td>
                                 <td>
                                     <input className='inputText' name="m_nickname" value={formData.m_nickname} type="text" onChange={onChange}/>
-                                    <button type="button">중복확인</button>
+                                    <button type="button" onClick={nickNameCheck} >중복확인</button>
                                     <div className='message' style={{...textArea}}>{isNickMessage}</div>
                                 </td>
                             </tr>
@@ -358,7 +414,8 @@ const Join = () => {
                                 <td>추천인</td>
                                 <td>
                                     <input className='inputText' name="m_comnick" value={formData.m_comnick} onChange={onChange} type="text"/>
-                                    <button type="button">추천인 확인</button>
+                                    <button type="button" onClick={comNickNameCheck}>추천인 확인</button>
+                                    <div className='message' style={{...textArea}}>{isComNickMessage}</div>
                                 </td>
                             </tr>
                         </tbody>

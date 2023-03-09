@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
 import iceProduct from "./iceProduct";
+import loginM from "./loginM";
 
 
-const rootReducer = combineReducers({iceProduct})
+const rootReducer = combineReducers({iceProduct, loginM})
 
 export default rootReducer
 

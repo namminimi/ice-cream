@@ -1,4 +1,4 @@
-#loginPage {
+#findIdPage {
     padding: 300px 350px;
     height: 85vh;
     h2{
@@ -7,11 +7,11 @@
         padding-bottom: 30px;
         border-bottom: 1px solid #333;
     }
-    .loginForm{
+    .findIdForm{
         padding: 20px;
         width: 500px;
         height: 600px;
-        .loginTable {
+        .findIdTable {
             line-height: 60px;
             width: 100%;
             tr{
@@ -35,12 +35,12 @@
             }
               
         }
-        .loginbtn{
+        .findIdbtn{
             display: flex;
             justify-content: space-between;
             button{
                 margin-top: 20px;
-                width:220px;
+                width:500px;
                 height:40px;
                 background-color: #4D455D;
                 color:#fff;
@@ -55,7 +55,7 @@
                 }
             } 
         }
-        .findbtn{
+        .findpassbtn{
             margin-top: 20px;
             height:30px;
             display: flex;
@@ -74,3 +74,31 @@
         
     }
 }
+
+.findText{
+    p{
+        font-family: "맑은고딕",sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .findedId{
+            display: flex;
+            justify-content: space-between;
+            button{
+                margin-top: 30px;
+                width:220px;
+                height:40px;
+                background-color: #4D455D;
+                color:#fff;
+                border-radius: 5px;
+                border: 0;
+                outline: 0;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                &:hover{
+                    background-color: #E96479;
+                }
+            } 
+        }
+    }

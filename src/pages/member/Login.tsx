@@ -80,8 +80,8 @@ const Login = () => {
                         <Link to="/join"><button type="button">회원가입</button></Link>
                     </div>
                     <div className='findbtn'>
-                        <p>아이디 찾기</p>
-                        <p>비밀번호 찾기</p>
+                    <Link to="/findId"><p>아이디 찾기</p></Link>
+                    <Link to="/findPass"><p>비밀번호 찾기</p></Link>
                     </div>
                 </form>
             </div>

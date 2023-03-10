@@ -306,14 +306,14 @@ const Join = () => {
 
     const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        /* if(formData.m_name !== "" && formData.m_password !== "" && formData.m_passwordCh !== "" 
+        if(formData.m_name !== "" && formData.m_password !== "" && formData.m_passwordCh !== "" 
         && formData.m_id !== "" && formData.m_nickname !== "" && formData.m_birth !== ""
         && formData.m_gender !== "" && formData.m_phone !== ""  && formData.m_add1 !== "" && formData.m_add2 !== "" ){
             runJoin()
         }else {
             alert("입력란에 입력해주세요")
-        } */
-        runJoin()
+        }
+    
     }
     const runJoin = () => {
         console.log("가입버튼")
@@ -378,7 +378,7 @@ const Join = () => {
                             <tr>
                                 <td>생년월일</td>
                                 <td>
-                                    <input className='inputText' name="m_birth" value={formData.m_birth} type="text" placeholder='"-"를 제외한 생년월일 8자 입력해주세요. ex)19900513' onChange={onChange}/>
+                                    <input className='inputText' name="m_birth" value={formData.m_birth} type="text" placeholder='"-"를 제외한 숫자8자 입력해주세요. ex)19900513' onChange={onChange}/>
                                     <div className='message' style={{...textArea}}>{isbirMessage}</div>
                                 </td>
                             </tr>

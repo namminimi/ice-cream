@@ -16,7 +16,7 @@ type LoginAction = ReturnType<typeof setLogin>
 //초기값 상태
 export type LoginCheckState = {
     isLogin: boolean,
-    updateId: null | iceCreamData
+    updateId: null | string
 }
 
 
@@ -27,7 +27,7 @@ const initialState = {
 }
 
 //리듀서
-export default function loginM(state=initialState, action: LoginAction) {
+export default function loginM(state:LoginCheckState=initialState, action: LoginAction) {
     switch(action.type){
         case SET_LOGIN:
             return {

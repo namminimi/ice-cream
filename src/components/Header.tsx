@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { rootState } from '../moduls';
+import { setLogin, setLogOut } from '../moduls/loginM';
+import { getCookie, removeCookie } from '../util/cookie';
 //import "./Header.scss"
 
 
@@ -20,7 +25,6 @@ const HeaderDiv = styled.header`
         }
     }
 `
-
 const NavDiv = styled.div`
     display:flex;
     justify-content: space-between;
@@ -74,11 +78,27 @@ const NavDiv = styled.div`
         margin-right: 10px;
         li{
             list-style: none;
+            cursor: pointer;
         }
     }
 `;
 
 const Header = () => {
+    const {isLogin} = useSelector((state : rootState )=>state.loginM)
+    const username = getCookie("useNickName")
+    const userId = getCookie("userId")
+    const dispatch = useDispatch();
+    const logoutClick = ()=>{
+        removeCookie('useNickName')
+        removeCookie('userId')
+        dispatch(setLogOut())
+        alert("로그아웃")
+    }
+    useEffect(()=>{
+        if(username){
+            dispatch(setLogin())
+        }
+    })
     return (
         <HeaderDiv>
             <div className='logo'>
@@ -97,8 +117,16 @@ const Header = () => {
                     <li>공지사항</li>
                 </ul>
                 <ul className='join'>
-                    <li><Link to="/join">회원가입</Link></li>
-                    <li><Link to="/login">로그인</Link></li>
+                    { isLogin ? 
+                    <>
+                        <li onClick={logoutClick}>로그아웃</li>
+                        {userId == "admin" ? <li>상품등록</li> : <li>마이페이지</li>}
+                    </>:
+                    <>
+                        <li><Link to="/login">로그인</Link></li>
+                        <li><Link to="/join">회원가입</Link></li> 
+                    </>
+                }
                 </ul>
             </NavDiv>
         </HeaderDiv>

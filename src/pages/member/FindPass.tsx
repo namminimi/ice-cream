@@ -1,16 +1,20 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
 import { API_URL } from '../../config/apirul';
+import { setId } from '../../moduls/loginM';
+import "./FindPass.scss"
 
 const FindPass = () => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
     type FindPassType = {
         findId: string,
         findName: string,
         findPhone: string
     }
 
-    const [isInfo, setInfo] = useState<string>("")
     const [findPassData, setfindPassData] = useState<FindPassType>({
         findId: "",
         findName: "",
@@ -32,12 +36,12 @@ const FindPass = () => {
             .then(res=>{
                 console.log(res)
                 if(res.data == "조회불가"){
-                    alert("요청하신 정보는 없습니다. 다시입려해주세요")
+                    alert("요청하신 정보는 없습니다. 다시입력해주세요")
                 }else{
-                    console.log(res)
-                    setInfo(res.data[0].m_id)
+                    console.log(res.data[0].m_id)
+                    dispatch(setId(res.data[0].m_id))
+                    navigate("/editPass")
                 }
-                
             })
             .catch(e=>console.log(e))
         }else {
@@ -45,20 +49,18 @@ const FindPass = () => {
         }
     }
     return (
-        <div id="findIdPage" className='inner'>
-            <div className='findIdForm'>
+        <div id="findPassPage" className='inner'>
+            <div className='findPassForm'>
                 <h2>비밀번호 찾기</h2>
-                {isInfo ? 
-                <div className='findText'>
-                    <p> 회원님의 아이디는 {isInfo}입니다.</p>
-                    <div className='findedId'>
-                        <button type="button">비밀번호 찾기</button>
-                        <Link to="/login"><button type="button">로그인하러가기</button></Link>
-                    </div>
-                </div>:
                 <form onSubmit={onSubmit}>
-                    <table className='findIdTable'>
+                    <table className='findPassTable'>
                         <tbody>
+                            <tr>
+                                <td>아이디</td>
+                                <td>
+                                    <input className='inputText' name="findId" value={findPassData.findId} type="text" onChange={onChange}/>
+                                </td>
+                            </tr>
                             <tr>
                                 <td>이름</td>
                                 <td>
@@ -73,14 +75,15 @@ const FindPass = () => {
                             </tr>
                         </tbody>
                     </table>
-                    <div className='findIdbtn'>
-                        <button type="submit">아이디 찾기</button>
+                    <div className='findPassbtn'>
+                        <button type="submit">비밀번호 찾기</button>
                     </div>
-                    <div className='findpassbtn'>
-                        <p>비밀번호 찾기</p>
+                    <div className='findIdbtn'>
+                        <Link to="/findId"><p>아이디 찾기</p></Link>
+                        <Link to="/login"><p>로그인하러 가기</p></Link>
                     </div>
                 </form>
-                }
+                
             </div>
         </div>
     );

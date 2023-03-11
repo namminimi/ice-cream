@@ -8,6 +8,7 @@ import Join from './pages/member/Join';
 import Login from './pages/member/Login';
 import FindId from './pages/member/FindId';
 import FindPass from './pages/member/FindPass';
+import EditPass from './pages/member/EditPass';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/findId' element={<FindId/>}/>
         <Route path='/findPass' element={<FindPass/>}/>
+        <Route path='/editPass' element={<EditPass/>}/>
       </Routes>
       
     </div>

@@ -31,7 +31,7 @@ const FindId = () => {
             .then(res=>{
                 console.log(res)
                 if(res.data == "조회불가"){
-                    alert("요청하신 정보는 없습니다. 다시입려해주세요")
+                    alert("요청하신 정보는 없습니다. 다시입력해주세요")
                 }else{
                     console.log(res)
                     setInfo(res.data[0].m_id)
@@ -76,7 +76,7 @@ const FindId = () => {
                         <button type="submit">아이디 찾기</button>
                     </div>
                     <div className='findpassbtn'>
-                        <p>비밀번호 찾기</p>
+                        <Link to="/findPass"><p>비밀번호 찾기</p></Link>
                     </div>
                 </form>
                 }

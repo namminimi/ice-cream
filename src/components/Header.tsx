@@ -106,12 +106,13 @@ const Header = () => {
             </div>
             <NavDiv >
                 <ul className='menu' >
-                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/">홈</Link></li>
                     <li className='navList'>
-                        <div>Menu</div> 
+                        <Link to="/iceCreamList"><div>제품</div></Link> 
                         <ul>
-                            <li>아이스크림</li>
-                            <li>음료</li>
+                            <li>롯데제과</li>
+                            <li>빙그레</li>
+                            <li>해테</li>
                         </ul>
                     </li>
                     <li>공지사항</li>

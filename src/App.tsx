@@ -9,6 +9,7 @@ import Login from './pages/member/Login';
 import FindId from './pages/member/FindId';
 import FindPass from './pages/member/FindPass';
 import EditPass from './pages/member/EditPass';
+import ProductContainer from './containers/ProductContainer';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/findId' element={<FindId/>}/>
         <Route path='/findPass' element={<FindPass/>}/>
         <Route path='/editPass' element={<EditPass/>}/>
+        <Route path='/iceCreamList' element={<><ProductContainer/><Footer/></>}/>
       </Routes>
       
     </div>

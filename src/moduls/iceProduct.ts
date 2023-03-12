@@ -57,27 +57,32 @@ const initialState: DataState = {
     },
 }
 
+/* type CallbackType = {
+    callback: () => void
+} */
+
 //thunk함수
-export const getDatasF = (callback:any) => async (dispatch: Dispatch) =>{
+export const getDatasF = (callback:Function) => async (dispatch: Dispatch) =>{
     dispatch({type: GET_DATAS})
     try{
         const response = await callback();
         const data = response.data
+        console.log(data)
         dispatch({
-            type: GET_DATAS_SUCCESS, data: data
+            type: GET_DATAS_SUCCESS, payload: data
         })
     }
     catch(e){
         dispatch({type: GET_DATAS_ERROR, error: e})
     }
 }
-export const getDataF = (callback:any) => async (dispatch: Dispatch) => {
+export const getDataF = (callback:Function) => async (dispatch: Dispatch) => {
     dispatch({type: GET_DATA})
     try{
         const response = await callback();
         const data = response.data[0];
         dispatch({
-            type: GET_DATA_SUCCESS, data : data
+            type: GET_DATA_SUCCESS, payload: data
         })
     }
     catch(e){
@@ -87,7 +92,7 @@ export const getDataF = (callback:any) => async (dispatch: Dispatch) => {
 
 
 //리듀서 만들기
-export default function iceProduct(state=initialState , action:DataAction) {
+export default function iceProduct(state=initialState , action: DataAction) {
     switch(action.type){
         case GET_DATAS:
             return {

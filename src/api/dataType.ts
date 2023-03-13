@@ -12,8 +12,9 @@ export interface iceCreamData {
 }
 
 export interface iceCreamData2 {
+    p_img: any;
     p_title: string;
-    p_desc: string;
+    p_dsce: string;
     p_img1: string;
     p_img2?: string|null;
     p_img3?: string|null;

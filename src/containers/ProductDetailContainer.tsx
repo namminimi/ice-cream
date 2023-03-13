@@ -34,7 +34,7 @@ const ProductDetailContainer = () => {
     console.log(data)
     return (
         <div>
-            <ProductDetail datas={data}/>
+            <ProductDetail data={data}/>
         </div>
     );
 };

@@ -1,16 +1,25 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import { iceCreamData2 } from "../api/dataType";
+import { API_URL } from "../config/apirul";
 import './DetailSlide.scss'
 
+type dataType = {
+  data: iceCreamData2
+}
 
-
-export default class CenterMode extends Component {
+export default class CenterMode extends Component<dataType> {
+  
   render() {
+    const {data} = this.props
+    console.log(data)
     const settings = {
       customPaging: function(i:number) {
+        const imgNum = [data.p_img1, data.p_img2, data.p_img3, data.p_img4]
+        console.log(`${API_URL}/${imgNum[i]}`)
         return (
           <a>
-            <img src={`images/롯데제과/product${i + 1}.png`} />
+            <img src={`${API_URL}/${imgNum[i]}`} />
           </a>
         );
       },
@@ -25,17 +34,23 @@ export default class CenterMode extends Component {
       <div className="detailSlide">
         <Slider {...settings}>
           <div>
-            <img src={`images/롯데제과/product1.png`} />
+            <img src={`${API_URL}/${data.p_img1}`} />
           </div>
+          {data.p_img2 !== null ?
           <div>
-            <img src={`images/롯데제과/product2.png`} />
-          </div>
+            <img src={`${API_URL}/${data.p_img2}`} />
+          </div> : null
+             }
+          {data.p_img3 !== null ?
           <div>
-            <img src={`images/롯데제과/product3.png`} />
-          </div>
+            <img src={`${API_URL}/${data.p_img3}`} />
+          </div> : null
+          }
+          {data.p_img4 !== null ?
           <div>
-            <img src={`images/롯데제과/product4.png`} />
-          </div>
+            <img src={`${API_URL}/${data.p_img4}`} />
+          </div>: null
+          }
         </Slider>
       </div>
     );

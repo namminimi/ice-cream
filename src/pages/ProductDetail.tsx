@@ -4,18 +4,20 @@ import DetailSlide from '../components/DetailSlide';
 import "./ProductDetail.scss"
 
 type detailDataType = {
-    datas: iceCreamData2
+    data: iceCreamData2
 }
 
-const ProductDetail = ({datas}:detailDataType) => {
+const ProductDetail = ({data}:detailDataType) => {
     return (
         <div className='productDetailPage inner'>
             <div className='innerProduct'>
                 <h2 className='b_title'>상세보기</h2>
+                <p>{data.p_dsce}</p>
                 <div className='buyProduct'>
-                    <DetailSlide />
+                    <DetailSlide data={data}/>
                     <div className='b_table'>
-                        <h2>{datas.p_title}</h2>
+                        <h2 style={{width: data.p_title.length >= 4 ? 
+                            (data.p_title.length <= 7 ? "180px" : "300px" ): "90px"}}>{data.p_title}</h2>
                         <table className='bb_tables'>
                             <tbody>
                                 <tr>
@@ -25,7 +27,7 @@ const ProductDetail = ({datas}:detailDataType) => {
                                 <tr>
                                     <td>수량:</td>
                                     <td>
-                                        <input type="number"/>
+                                        <input type="number" max="10" min="1"/>
                                     </td>
                                 </tr>
                                 <tr>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { API_URL } from '../config/apirul';
 import "./IceCreamProduct.scss"
 
@@ -7,7 +8,7 @@ type dataType = {
 }
 
 const IceCreamProduct = ({data}:dataType) => {
-    console.log(data)
+    //console.log(data)
     return (
         <div className='iceCreamMenu inner2'>
             <div className='iceCreamProducts'>
@@ -25,14 +26,14 @@ const IceCreamProduct = ({data}:dataType) => {
                 </div>
                 <div className='productLists'>
                     <ul>
-                        {data.map((list:any) => <li key={list.p_no}>
+                        {data.map((list:any) =><Link to={`/productDetail/${list.p_no}`}><li key={list.p_no}>
                             <div className='productList'>
                                 <img src={`${API_URL}/${list.p_img1}`} alt="" />
                                 <div className='productTitle'>
                                     <h4>{list.p_title}</h4>
                                 </div>
                             </div>
-                        </li>)}
+                        </li></Link>)}
                     </ul>
                 </div>
             </div>

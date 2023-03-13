@@ -7,12 +7,16 @@ export interface iceCreamData {
     m_gender: string;
     m_phone: string;
     m_address: string;
-    m_comnick: string | null;
-    p_titkl: string;
+    m_comnick?: string | null;
+    
+}
+
+export interface iceCreamData2 {
+    p_title: string;
     p_desc: string;
     p_img1: string;
-    p_img2: string | null;
-    p_img3: string | null;
-    p_img4:string | null;
+    p_img2?: string|null;
+    p_img3?: string|null;
+    p_img4?: string|null;
     p_brand: string;
 }

@@ -10,6 +10,7 @@ import FindId from './pages/member/FindId';
 import FindPass from './pages/member/FindPass';
 import EditPass from './pages/member/EditPass';
 import ProductContainer from './containers/ProductContainer';
+import ProductDetailContainer from './containers/ProductDetailContainer';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/findPass' element={<FindPass/>}/>
         <Route path='/editPass' element={<EditPass/>}/>
         <Route path='/iceCreamList' element={<><ProductContainer/><Footer/></>}/>
+        <Route path='/productDetail/:no' element={<><ProductDetailContainer/><Footer/></>}/>
       </Routes>
       
     </div>

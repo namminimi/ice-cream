@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import { Dispatch } from "redux";
-import { iceCreamData } from "../api/dataType";
+import { iceCreamData2 } from "../api/dataType";
 
 //액션타입
 const GET_DATAS = "iceProduct/GET_DATAS" as const;
@@ -13,11 +13,11 @@ const GET_DATA_ERROR = "iceProduct/GET_DATA_ERROR" as const;
 
 //액션함수
 export const getDatas = () => ({type: GET_DATAS})
-export const getDatasSuccess = (data: iceCreamData) => ({type: GET_DATAS_SUCCESS, payload: data})
+export const getDatasSuccess = (data: iceCreamData2) => ({type: GET_DATAS_SUCCESS, payload: data})
 export const getDatasError = (error: AxiosError) => ({type: GET_DATAS_ERROR, payload: error})
 
 export const getData = () => ({type: GET_DATA})
-export const getDataSuccess = (data: iceCreamData) => ({type: GET_DATA_SUCCESS, payload: data})
+export const getDataSuccess = (data: iceCreamData2) => ({type: GET_DATA_SUCCESS, payload: data})
 export const getDataError = (error: AxiosError) => ({type: GET_DATA_ERROR, payload: error})
 
 
@@ -33,12 +33,12 @@ type DataAction = ReturnType<typeof getDatas>
 export type DataState = {
     iceProducts: {
         loading: boolean;
-        data: null | iceCreamData;
+        data: null | iceCreamData2;
         error: null | Error;
     },
     iceProduct: {
         loading: boolean;
-        data: null | iceCreamData;
+        data: null | iceCreamData2;
         error: null | Error;
     }
 }

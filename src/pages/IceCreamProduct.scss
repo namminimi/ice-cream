@@ -20,6 +20,27 @@
                 padding-left: 50px;
                 font-size: 20px;
             }
+            a {
+                width: 20%;
+                background-color: pink;
+                font-family: "맑은고딕", sans-serif;
+                font-weight: bold;
+                width: 20%;
+                height: 50px;
+                padding: 10px 5px;
+                border-radius: 25px;
+                font-size: 20px;
+                span {
+                    background-color: pink;
+                    font-family: "맑은고딕", sans-serif;
+                    font-weight: bold;
+                    width: 20%;
+                    height: 50px;
+                    padding: 10px 5px;
+                    border-radius: 25px;
+                    font-size: 20px;
+                }
+            }
             span {
                 background-color: pink;
                 font-family: "맑은고딕", sans-serif;
@@ -29,7 +50,9 @@
                 padding: 10px 5px;
                 border-radius: 25px;
                 font-size: 20px;
+                cursor: pointer;
             }
+            
         }
         .brand{
             display: flex;
@@ -54,7 +77,9 @@
                 display: flex;
                 justify-content: flex-start;
                 flex-wrap: wrap;
-                li {
+                a {
+                    width: 25%;
+                    li {
                     margin: 30px 30px 50px;
                   .productList {
                     border: 1px solid #eee;
@@ -84,7 +109,9 @@
                             text-align: center;
                         }
                     }
-                  }  
+                  }
+                }
+                  
                 } 
             }
         }

@@ -1,29 +1,24 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { iceCreamData2 } from '../api/dataType';
 import SearchBlock from '../components/SearchBlock';
 import { API_URL } from '../config/apirul';
-import "./IceCreamProduct.scss"
 
-type DataType = {
-    data: any
+type SearchType = {
+    data: any,
+    title: any
 }
 
-const IceCreamProduct = ({data}:DataType) => {
-    //console.log(data)
-   
+
+const SearchPage = ({data, title}:SearchType) => {
+    console.log(title)
+    console.log(data)
     return (
         <div className='iceCreamMenu inner2'>
             <div className='iceCreamProducts'>
                 <SearchBlock/>
-                <h2>제품목록</h2>
-                <div className='brand'>
-                    <p>롯데제과</p>
-                    <p>/</p>
-                    <p>빙그레</p>
-                    <p>/</p>
-                    <p>해태</p> 
-                </div>
                 <div className='productLists'>
+                    <h2>검색결과 : {title}....{data.length}건 있습니다</h2>
                     <ul>
                         {data.map((list:any) =><Link to={`/productDetail/${list.p_no}`}><li key={list.p_no}>
                             <div className='productList'>
@@ -40,4 +35,4 @@ const IceCreamProduct = ({data}:DataType) => {
     );
 };
 
-export default IceCreamProduct;
+export default SearchPage;

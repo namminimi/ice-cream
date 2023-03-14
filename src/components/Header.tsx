@@ -85,20 +85,25 @@ const NavDiv = styled.div`
 
 const Header = () => {
     const {isLogin} = useSelector((state : rootState )=>state.loginM)
-    const username = getCookie("useNickName")
+    const username = getCookie("userNickName")
     const userId = getCookie("userId")
     const dispatch = useDispatch();
     const logoutClick = ()=>{
-        removeCookie('useNickName')
+        removeCookie('userNickName')
         removeCookie('userId')
         dispatch(setLogOut())
         alert("로그아웃")
     }
     useEffect(()=>{
-        if(username){
-            dispatch(setLogin())
-        }
-    })
+        const loop = setInterval(()=>{
+            if(username){
+                dispatch(setLogin())
+            }else {
+                dispatch(setLogOut())
+                clearInterval(loop)
+            }
+        }, 3000)
+    },[username, dispatch])
     return (
         <HeaderDiv>
             <div className='logo'>
@@ -118,10 +123,10 @@ const Header = () => {
                     <li>공지사항</li>
                 </ul>
                 <ul className='join'>
-                    { isLogin ? 
+                    { isLogin && username ? 
                     <>
                         <li onClick={logoutClick}>로그아웃</li>
-                        {userId == "admin" ? <li>상품등록</li> : <li>마이페이지</li>}
+                        {isLogin && userId == "admin" ? <li>상품등록</li> : <li>마이페이지</li>}
                     </>:
                     <>
                         <li><Link to="/login">로그인</Link></li>

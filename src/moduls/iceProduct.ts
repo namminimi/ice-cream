@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import { Dispatch } from "redux";
-import { iceCreamData2 } from "../api/dataType";
+import { BrandDatas, iceCreamData2 } from "../api/dataType";
 
 //액션타입
 const GET_DATAS = "iceProduct/GET_DATAS" as const;
@@ -15,6 +15,11 @@ const GET_DATA_ERROR = "iceProduct/GET_DATA_ERROR" as const;
 const GET_SEARCHDATAS = "GET_SEARCHDATAS" as const;
 const GET_SEARCHDATAS_SUCCESS = "GET_SEARCHDATAS_SUCCESS" as const;
 const GET_SEARCHDATAS_ERROR = "GET_SEARCHDATAS_ERROR" as const;
+
+//브랜드별 액션 타입
+const GET_BRANDDATAS = "GET_BRANDDATAS" as const
+const GET_BRANDDATAS_SUCCESS = "GET_BRANDDATAS_SUCCESS" as const
+const GET_BRANDDATAS_ERROR = "GET_BRANDDATAS_ERROR" as const
 ///////////////////////////
 
 //액션함수
@@ -29,6 +34,10 @@ export const getDataError = (error: AxiosError) => ({type: GET_DATA_ERROR, paylo
 export const getSearchDatas = () => ({type: GET_SEARCHDATAS})
 export const getSearchDatasSuccess = (data: iceCreamData2) => ({type: GET_SEARCHDATAS_SUCCESS, payload: data})
 export const getSearchDatasError = (error: AxiosError) => ({type: GET_SEARCHDATAS_ERROR, payload: error})
+//브랜드별 액션 함수
+export const getBrandDatas = () => ({type: GET_BRANDDATAS})
+export const getBrandDatasSuccess = (data: BrandDatas) => ({type: GET_BRANDDATAS_SUCCESS, payload: data})
+export const getBrandDatasError = (error: AxiosError) => ({type: GET_BRANDDATAS_ERROR, payload: error})
 ///////////////
 
 type DataAction = ReturnType<typeof getDatas>
@@ -40,6 +49,9 @@ type DataAction = ReturnType<typeof getDatas>
 | ReturnType<typeof getSearchDatas>
 | ReturnType<typeof getSearchDatasSuccess>
 | ReturnType<typeof getSearchDatasError>
+| ReturnType<typeof getBrandDatas>
+| ReturnType<typeof getBrandDatasSuccess>
+| ReturnType<typeof getBrandDatasError>
 
 //////////////////////////
 
@@ -59,6 +71,11 @@ export type DataState = {
         loading: boolean;
         data: null | iceCreamData2;
         error: null | Error;
+    },
+    brandsList: {
+        loading: boolean;
+        data: null | BrandDatas;
+        error: null | Error;
     }
 }
 
@@ -75,6 +92,11 @@ const initialState: DataState = {
         error: null
     },
     searchResult: {
+        loading: false,
+        data: null,
+        error: null
+    },
+    brandsList: {
         loading: false,
         data: null,
         error: null
@@ -127,6 +149,24 @@ export const getSearchDataF = (callback:Function) => async (dispatch: Dispatch) 
         dispatch({type: GET_SEARCHDATAS_ERROR, error: e})
     }
 }
+//브랜드별 리스트
+export const getBrandsDataF = (callback:Function) => async (dispatch: Dispatch) => {
+    dispatch({type: GET_BRANDDATAS})
+    try{
+        const response = await callback();
+        const data = response.data;
+        console.log(data)
+        dispatch({
+            type: GET_BRANDDATAS_SUCCESS, payload: data
+        })
+    }
+    catch(e){
+        dispatch({type: GET_BRANDDATAS_ERROR, error: e})
+    }
+}
+
+
+
 
 ////////////////////////////////////////////
 //리듀서 만들기
@@ -205,15 +245,43 @@ export default function iceProduct(state=initialState , action: DataAction) {
                     error: null
                 }
             }
-            case GET_SEARCHDATAS_ERROR:
+        case GET_SEARCHDATAS_ERROR:
+            return {
+                ...state,
+                searchResult: {
+                    loading: false,
+                    data: null,
+                    error: action.payload
+                }
+            }
+            //브랜드별 리스트
+        case GET_BRANDDATAS:
+            return {
+                ...state,
+                brandsList: {
+                    loading: true,
+                    data: null,
+                    error: null
+                }
+            }
+        case GET_BRANDDATAS_SUCCESS:
+            return {
+                ...state,
+                brandsList: {
+                    loading: false,
+                    data: action.payload,
+                    error: null
+                }
+            }
+            case GET_BRANDDATAS_ERROR:
         return {
             ...state,
-            searchResult: {
+            brandsList: {
                 loading: false,
                 data: null,
                 error: action.payload
             }
-        }    
+        }        
         default:
             return state;       
             

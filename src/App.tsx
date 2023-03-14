@@ -12,6 +12,7 @@ import EditPass from './pages/member/EditPass';
 import ProductContainer from './containers/ProductContainer';
 import ProductDetailContainer from './containers/ProductDetailContainer';
 import SearchContainer from './containers/SearchContainer';
+import SelectBrContainer from './containers/SelectBrContainer';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path='/iceCreamList' element={<><ProductContainer/><Footer/></>}/>
         <Route path='/productDetail/:no' element={<><ProductDetailContainer/><Footer/></>}/>
         <Route path='/SearchPage/:title' element={<><SearchContainer/><Footer/></>}/>
+        <Route path='/iceCreamList/:brand' element={<><SelectBrContainer/><Footer/></>}/>
       </Routes>
       
     </div>

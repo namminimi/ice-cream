@@ -1,4 +1,5 @@
 import { iceCreamData } from "../api/dataType";
+import { getCookie, removeCookie } from '../util/cookie';
 
 const SET_LOGIN = 'SET_LOGIN' as const
 const SET_LOGOUT = 'SET_LOGOUT' as const
@@ -18,7 +19,6 @@ export type LoginCheckState = {
     isLogin: boolean,
     updateId: null | string
 }
-
 
 //초기값
 const initialState = {

@@ -21,3 +21,8 @@ export interface iceCreamData2 {
     p_img4?: string|null;
     p_brand: string;
 }
+
+export interface BrandDatas {
+    [x: string]: any;
+    brands: string
+}

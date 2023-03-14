@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom';
 import SearchBlock from '../components/SearchBlock';
 import { API_URL } from '../config/apirul';
 import BrandContainer from '../containers/BrandContainer';
-import "./IceCreamProduct.scss"
 
-type DataType = {
+type SelectDataType = {
     datas: any
 }
 
-
-const IceCreamProduct = ({datas}:DataType) => {
+const SelectBrPage = ({datas}:SelectDataType) => {
     return (
         <div className='iceCreamMenu inner2'>
             <div className='iceCreamProducts'>
@@ -34,4 +32,4 @@ const IceCreamProduct = ({datas}:DataType) => {
     );
 };
 
-export default IceCreamProduct;
+export default SelectBrPage;

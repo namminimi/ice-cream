@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {iceCreamData2 } from '../api/dataType';
+import {iceCreamData2 } from '../apis/dataType';
 import SearchBlock from '../components/SearchBlock';
 import { API_URL } from '../config/apirul';
 import BrandContainer from '../containers/BrandContainer';

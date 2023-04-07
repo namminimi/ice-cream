@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { iceCreamData } from '../api/dataType';
+import { iceCreamData } from '../apis/dataType';
 import PopupDom from '../components/PopupDom';
 import PopupPage from '../components/PopupPage';
 import { API_URL } from '../config/apirul';

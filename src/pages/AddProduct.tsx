@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./AddProduct.scss"
-import { iceCreamData2 } from '../api/dataType';
+import { iceCreamData2 } from '../apis/dataType';
 import axios from 'axios';
 import { API_URL } from '../config/apirul';
 import { useNavigate } from 'react-router-dom';

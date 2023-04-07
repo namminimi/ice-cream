@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { NoticeDatas } from '../api/dataType';
+import { NoticeDatas } from '../apis/dataType';
 import { API_URL } from '../config/apirul';
 import { getCookie } from '../util/cookie';
 import "./NoticeDetail.scss"

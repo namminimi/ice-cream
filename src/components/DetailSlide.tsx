@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import { iceCreamData2 } from "../api/dataType";
+import { iceCreamData2 } from "../apis/dataType";
 import { API_URL } from "../config/apirul";
 import './DetailSlide.scss'
 

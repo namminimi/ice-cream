@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Dispatch } from 'redux';
-import { iceCreamData2 } from '../api/dataType';
+import { iceCreamData2 } from '../apis/dataType';
 import { API_URL } from '../config/apirul';
 import { rootState } from '../moduls';
 import { getSearchDataF } from '../moduls/iceProduct';

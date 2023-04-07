@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {useState, useCallback} from 'react';
-import { CartDatas } from '../api/dataType';
+import { CartDatas } from '../apis/dataType';
 import { API_URL } from '../config/apirul';
 import "./MyPageCart.scss"
 

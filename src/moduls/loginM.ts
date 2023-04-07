@@ -1,4 +1,4 @@
-import { iceCreamData } from "../api/dataType";
+import { iceCreamData } from "../apis/dataType";
 //액션 타입
 const SET_LOGIN = 'SET_LOGIN' as const
 const SET_LOGOUT = 'SET_LOGOUT' as const

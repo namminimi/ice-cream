@@ -1,6 +1,6 @@
 import { AxiosError } from "axios"
 import { Dispatch } from "redux"
-import { iceCreamData } from "../api/dataType"
+import { iceCreamData } from "../apis/dataType"
 
 //회원정보 수정 액션 타입
 const GET_PERSONAL_DATA = 'loginM/GET_PERSONAL_DATA' as const

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { NoticeDatas } from '../api/dataType';
+import { NoticeDatas } from '../apis/dataType';
 import { rootState } from '../moduls';
 import { getCookie } from '../util/cookie';
 import "./NoticePage.scss"

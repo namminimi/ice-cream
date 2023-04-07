@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import { Dispatch } from "redux";
-import { BrandDatas, CartDatas, iceCreamData2, NoticeDatas } from "../api/dataType";
+import { BrandDatas, CartDatas, iceCreamData2, NoticeDatas } from "../apis/dataType";
 
 //액션타입
 const GET_DATAS = "iceProduct/GET_DATAS" as const;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getCookie } from '../util/cookie';
-import { NoticeDatas } from '../api/dataType';
+import { NoticeDatas } from '../apis/dataType';
 import "./WriteNotice.scss"
 import axios from 'axios';
 import { API_URL } from '../config/apirul';

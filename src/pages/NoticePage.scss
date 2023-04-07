@@ -1,0 +1,77 @@
+#noticePage{
+    padding-top: 200px;
+    padding-bottom: 80px;
+    height: 85vh;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    .noticeForm{
+        h2{
+            font-size: 40px;
+            width: 200px;
+            margin-bottom: 30px;
+        }
+        .noticeTable {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            thead{
+                tr{
+                    &:nth-child(1){
+                        line-height: 50px; 
+                        font-size: 25px;
+                        th{
+                            border-bottom: 3px double #333;
+                            &:nth-child(1){
+                                width: 5%;
+                            }
+                            &:nth-child(3){
+                                width: 20%;
+                            }
+                            &:nth-child(4){
+                                width: 15%;
+                            }
+                        }
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    line-height: 50px; 
+                    font-size: 18px;
+                    border-bottom: 1px solid #666;
+                    td{
+                        &:nth-child(2){
+                            a {
+                                &:hover{
+                                    color:#E96479
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+        }
+        .noticeBtn {
+            text-align: right;
+            button{
+                margin-top: 20px;
+                width:150px;
+                height:40px;
+                background-color: #4D455D;
+                color:#fff;
+                border-radius: 5px;
+                border: 0;
+                outline: 0;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                &:hover{
+                    background-color: #E96479;
+                }
+            }
+        }
+    }
+}

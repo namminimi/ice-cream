@@ -1,0 +1,161 @@
+#myPageCart {
+    padding-top: 200px;
+    padding-bottom: 22px;
+    .myPageCartForm {
+        h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .myPageCartList {
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 30px;
+            p{
+                padding-left: 30px;
+            } 
+        }
+        h3 {
+            font-size: 30px;
+        }
+        .myPageCartDivTable {
+            margin-top: 30px;
+            .myPageCartTable {
+                width: 100%;
+                border-collapse: collapse;
+                thead {
+                    tr {
+                        background-color: rgba(0,0,0,0.1);
+                        line-height: 50px;
+                        input {
+                            width: 20px;
+                            height: 20px;
+                            vertical-align: middle;
+                        }
+                        th {
+                            border: 1px solid #ccc;
+                            &:nth-child(1){
+                                width: 5%;
+                            }
+                            &:nth-child(2){
+                                width: 30%;
+                            } 
+                            &:nth-child(3){
+                                width: 10%;
+                            } 
+                            &:nth-child(4){
+                                width: 15%;
+                            } 
+                            &:nth-child(5){
+                                width: 10%;
+                            } 
+                            &:nth-child(6){
+                                width: 10%;
+                            }
+                        } 
+                                                    
+                    }
+                }
+                tbody {
+                    tr{
+                        text-align: center;
+                        line-height: 25px;
+                        border: 1px solid #ccc;
+                        input {
+                            width: 20px;
+                            height: 20px;
+                            vertical-align: middle;
+                        }
+                        td {
+                            vertical-align: middle;
+                            font-size: 18px;
+                            &:nth-child(1) {
+                                border-right: 1px solid #ccc
+                            }
+                            button{
+                                width: 100px;
+                                height:35px;
+                                background-color: #4D455D;
+                                color:#fff;
+                                border-radius: 5px;
+                                border: 0;
+                                outline: 0;
+                                font-size: 15px;
+                                font-weight: bold;
+                                cursor: pointer;
+                                &:hover{
+                                    background-color: #E96479;
+                                }
+                            }
+                        }
+                        .myPageTitle {
+                            display: flex;
+                            text-align: center;
+                            justify-content: center;
+                            width: 100%;
+                            height: 200px;
+                            span {
+                                width: 30%;
+                                padding-top: 70px;
+                                line-height: 35px;
+                                h4 {
+                                    font-size: 22px;
+                                }
+                                p {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .cartBtn {
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                margin: 30px 0px;
+                .cartDel {
+                    button{
+                        width: 180px;
+                        height:40px;
+                        background-color: #4D455D;
+                        color:#fff;
+                        border-radius: 5px;
+                        border: 0;
+                        outline: 0;
+                        font-size: 15px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #E96479;
+                        }
+                    }
+                }
+                .cartSum {
+                    font-size: 25px;
+                }
+            }
+            .cartBuy {
+                text-align: right;
+                button{
+                    width: 180px;
+                    height:40px;
+                    background-color: #4D455D;
+                    color:#fff;
+                    border-radius: 5px;
+                    border: 0;
+                    outline: 0;
+                    font-size: 15px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #E96479;
+                    }
+                }
+            }
+        }
+
+    }
+}
+

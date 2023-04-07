@@ -1,0 +1,69 @@
+#myPage {
+    padding-top: 200px;
+    padding-bottom: 120px;
+    .myPageForm {
+        h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .myPageList {
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 40px;
+            p{
+                padding-left: 30px;
+            } 
+        }
+        h3 {
+            font-size: 30px;
+        }
+        ul {
+            display: flex;
+            margin-top: 50px;
+            justify-content: space-around;
+            li{
+                background-color: #ccc;
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                cursor: pointer;
+                &:hover{
+                    background-color: #93BFCF;
+                }
+                h4{
+                    font-size: 20px;
+                    height: 45%;
+                }
+                p {
+                    font-size: 15px;
+                    width: 180px;
+                    color:#333
+                }
+            }
+            .leave {
+                h4{
+                    font-size: 20px;
+                    height: 15%;
+                }
+                p {
+                    font-size: 15px;
+                    width: 180px;
+                    color:#333
+                }
+            }
+        }
+        .myPageNotice {
+            font-size: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    }
+}
+

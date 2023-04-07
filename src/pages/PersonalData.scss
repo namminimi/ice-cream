@@ -1,0 +1,201 @@
+#personalData {
+    padding-top: 180px;
+    padding-bottom: 50px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    .personalDataForm {
+        h2 {
+            font-size: 30px;
+            margin-top: 20px;
+        }
+        form {
+            h2 {
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+            .personalDataTable {
+                border-collapse: collapse;
+                width: 100%;
+                border-radius: 20px;
+                background-color: rgba(0,0,0,0.1);
+                height: 40px; 
+                margin-bottom: 50px;
+                tbody{
+                    tr{
+                        line-height: 10px;
+                        td{
+                            font-size: 16px;
+                            padding: 20px;
+                            &:nth-child(1){
+                                width: 30%;
+                            }
+                        }
+                    }
+                }
+            }
+            .personalDataTable2 {
+                .e_information {
+                    padding: 5px 15px;
+                    border: 1px solid #ccc;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 50px;
+                    margin-bottom: 20px;
+                    border-radius: 10px;
+                    h3{
+                        width: 25%;
+                    }
+                    p {
+                        width: 60%;
+
+                    }
+                    input {
+                        width: 80%;
+                        height: 30px;
+                        border: 0;
+                        outline: 0;
+                    }
+                    button {
+                        width: 10%;
+                        height: 40px;
+                        background-color: #fff;
+                        border: 0;
+                        outline: 0;
+                        font-size: 20px;
+                        font-weight: bold;
+                        &:hover {
+                            color: red
+                        }
+                    }
+                }
+                .message {
+                    font-size: 15px;
+                    padding-left: 10px;
+                    margin-bottom: 20px;
+                    font-family: "맑은고딕","sans-serif";
+                    font-weight: bold;
+                    color:red;
+                    line-height: -50px;
+                }
+                .e_hiddenPass {
+                   .newPass {
+                    padding: 5px 15px;
+                    border: 1px solid #ccc;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 50px;
+                    margin-bottom: 20px;
+                    border-radius: 10px;
+                    h3{
+                        width: 20%;
+                    }
+                    input {
+                        width: 75%;
+                        height: 30px;
+                        border: 0;
+                        outline: 0;
+                    }
+                   }
+                   .newPassCh {
+                    padding: 5px 15px;
+                    border: 1px solid #ccc;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 50px;
+                    margin-bottom: 20px;
+                    border-radius: 10px;
+                    h3{
+                        width: 20%;
+                    }
+                    input {
+                        width: 65%;
+                        height: 30px;
+                        border: 0;
+                        outline: 0;
+                    }
+                    button {
+                        width: 10%;
+                        height: 40px;
+                        background-color: #fff;
+                        border: 0;
+                        outline: 0;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                   }
+                }
+                .e_add {
+                    h3{
+                        margin-bottom: 10px;
+                    }
+                    .addInputBtn{
+                        padding-left: 15px;
+                        border: 1px solid #ccc;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        height: 50px;
+                        margin-bottom: 20px;
+                        border-radius: 10px;
+                        input{
+                            width: 80%;
+                            height: 30px;
+                            border: 0;
+                            outline: 0;
+                        }
+                        button {
+                            width: 20%;
+                            height: 50px;
+                            background-color: #ccc;
+                            font-size: 20px;
+                            border: 0;
+                            font-weight: bold;
+                            border-radius: 10px;
+                        }
+                    }
+                    .addBtnDiv{
+                        text-align: right;
+                        .addBtn {
+                            width: 180px;
+                            height: 30px;
+                            background-color: #ccc;
+                            font-size: 18px;
+                            border: 0;
+                            font-weight: bold;
+                            border-radius: 10px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                    
+                }
+                
+              
+            }
+            .myPageEditBtn {
+                margin-top: 50px;
+                text-align: right;
+                button{
+                    width: 180px;
+                    height:40px;
+                    background-color: #4D455D;
+                    color:#fff;
+                    border-radius: 5px;
+                    border: 0;
+                    outline: 0;
+                    font-size: 18px;
+                    margin-left: 10px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #E96479;
+                    }
+                }
+            }
+        }
+    }
+}

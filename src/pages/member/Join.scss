@@ -1,0 +1,89 @@
+#joinPage {
+    padding: 180px 200px;
+    height: 100vh;
+    h2{
+        margin-bottom: 30px;
+        font-size: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #333;
+    }
+    .joinForm{
+        padding: 10px 90px;
+        width: 800px;
+        height: 700px;
+        .joinTable {
+            line-height: 40px;
+            width: 100%;
+            tr{
+                td{
+                    vertical-align: top;
+                    &:nth-child(1){
+                        font-size: 20px;
+                        font-weight: bold;
+                        width: 20%;
+                    }
+                    &:nth-child(2){
+                        padding-left: 80px;
+                        width: 80%;
+                    }
+                    .inputText{
+                        width: 300px;
+                        height: 30px;
+                        padding-left: 5px;
+                        outline: 0;
+                    }
+                    .message {
+                        font-size: 13px;
+                        color: red
+                    }
+                    button{
+                        margin-left: 10px;
+                        width:100px;
+                        height:30px;
+                        background-color: #4D455D;
+                        color:#fff;
+                        border-radius: 5px;
+                        border: 0;
+                        outline: 0;
+                        vertical-align: middle;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #E96479;
+                        }
+                    }
+                }
+            } 
+            .addForm {
+                vertical-align: top;
+                button {
+                    vertical-align: top;
+                }
+            }  
+        }
+    }
+    .commendText{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: right;
+        color: red
+    }
+    .joinFormBtn{
+        text-align: right;
+        margin-top: 30px;
+        button {
+            margin-left: 10px;
+            width:150px;
+            height:40px;
+            background-color: #4D455D;
+            color:#fff;
+            border-radius: 5px;
+            border: 0;
+            outline: 0;
+            vertical-align: middle;
+            cursor: pointer;
+            &:hover{
+                background-color: #E96479;
+            }
+        }
+    }
+}

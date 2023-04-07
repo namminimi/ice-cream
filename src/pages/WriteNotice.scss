@@ -1,0 +1,65 @@
+#writeNotice {
+    padding-top: 200px;
+    padding-bottom: 100px;
+    width:100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    .writeTable{
+        text-align: center;
+        tr{
+            line-height: 80px;
+            td{
+                input{
+                    width: 150px;
+                    height: 40px;
+                    vertical-align: middle;
+                    border:0;
+                    outline: 0;
+                    border-bottom: 4px solid #333;
+                    border-right: 4px solid #333;
+                    &:nth-child(1){
+                        width: 680px;
+                        font-size: 30px;
+                        padding: 10px; 
+                    }
+                    &:not(:nth-child(1)){
+                        margin-left: 10px;
+                        text-align: center;
+                        font-size: 18px;
+                        font-weight: bold; 
+                    }
+                }
+                textarea {
+                    width: 1000px;
+                    height: 500px; 
+                    border:0;
+                    outline: 0;
+                    border: 1px solid #333;
+                    box-shadow: 2px 2px 1px 1px #333;
+                    padding: 20px 10px;
+                    font-size: 20px; 
+                }
+            }
+        }
+    }
+    .writeBtn {
+        text-align: right;
+            button{
+                margin-top: 10px;
+                margin-left: 10px;
+                width:150px;
+                height:40px;
+                background-color: #4D455D;
+                color:#fff;
+                border-radius: 5px;
+                border: 0;
+                outline: 0;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                &:hover{
+                    background-color: #E96479;
+                }
+            }
+    }
+}

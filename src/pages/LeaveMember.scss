@@ -1,0 +1,52 @@
+#leaveMemberDiv {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    .leaveMemberForm{
+        background-color: #4D455D;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+        border-radius: 10px;
+        color: #fff;
+        h2 {
+            font-size: 30px;
+        }
+        p {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 500px;
+            height: 35px;
+            outline: 0;
+            padding-left: 30px;
+        }
+        .leaveMemberBtn {
+            button{
+                margin-top: 20px;
+                margin-left: 10px;
+                width:100px;
+                height:40px;
+                background-color: black;
+                color:#fff;
+                border-radius: 5px;
+                border: 0;
+                outline: 0;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                &:hover{
+                    background-color: #E96479;
+                }
+            }
+        }
+    }
+}

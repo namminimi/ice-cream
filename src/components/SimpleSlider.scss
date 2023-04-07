@@ -1,0 +1,16 @@
+.slick-dots{
+    bottom: 60px;
+}
+.slick-next{
+    right: 50px;
+    z-index: 2;
+}
+.slick-prev {
+    left: 30px;
+    z-index: 2;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #fff;
+    font-size: 50px;
+}

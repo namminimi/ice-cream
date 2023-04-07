@@ -1,0 +1,36 @@
+#welcome {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    #map {
+        width: 50%;
+        height: 350px;
+        border-radius: 10px;
+    }
+    .storeAddress {
+        width: 43%;
+        height: 350px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        flex-wrap: wrap;
+        opacity: 0;
+        transition: 2s;
+        h3 {
+            margin-top: 10px;
+            font-size: 23px;
+        }
+        p {
+            margin-top: 10px;
+            margin-left: 0px;
+            font-size: 18px;
+            color: #333;
+            line-height: 25px;
+        }
+    }
+    .addressOn {
+        opacity: 1;
+    }
+}
+
+

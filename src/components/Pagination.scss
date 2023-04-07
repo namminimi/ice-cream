@@ -1,0 +1,25 @@
+.pages {
+    .page{
+        width: 100%;
+        
+        .numberLists {
+           display: flex;
+           justify-content: space-between;
+           width:250px;
+           margin: 20px auto 80px;
+            .numberList{
+                background-color: #fff;
+                color: #082032;
+                font-size: 20px;
+                width: 36px;
+                height: 36px;
+                margin-right: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.2s;
+                cursor: pointer; 
+            }
+        }
+    }
+}

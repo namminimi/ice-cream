@@ -24,9 +24,11 @@
         .slick-prev:before, .slick-next:before {
             color: #333;
             font-size: 30px;
+            
         }
         .slick-prev, .slick-next {
             top:85%;
+            z-index: -1;
         }
         .slick-dots {
             display: flex;

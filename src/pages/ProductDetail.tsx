@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { iceCreamData2 } from '../apis/dataType';
 import DetailSlide from '../components/DetailSlide';
 import { API_URL } from '../config/apirul';
@@ -12,6 +12,7 @@ type DetailDataType = {
 }
 
 const ProductDetail = ({data}:DetailDataType) => {
+    const navigate = useNavigate();
     let priceDot = data.p_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     //console.log(priceDot)
     let taste = data.p_taste.split(",")
@@ -53,7 +54,9 @@ const ProductDetail = ({data}:DetailDataType) => {
         }else {
             alert("로그인 후에 이용해주세요")
         }
-        
+    }
+    const onBack = () => {
+        navigate(-1)
     }
     
     return (
@@ -100,6 +103,9 @@ const ProductDetail = ({data}:DetailDataType) => {
                                 </tr>
                             </tbody>
                         </table>
+                        <div className='backList'>
+                            <button type="button" onClick={onBack} >목록</button>
+                        </div>
                     </div>
                 </div>
                 <div className='moveCartAlert' style={{opacity: isOpen ? "1" : "0"}}>

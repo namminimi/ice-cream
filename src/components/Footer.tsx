@@ -6,6 +6,7 @@ const Footers = styled.footer`
     width: 100%;
     height:150px;
     padding: 30px;
+    margin-top: 50px;
     @media screen and (max-width: 476px) {
         height:100px;
     } 

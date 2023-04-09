@@ -74,6 +74,25 @@
                         } 
                     }
                 }
+                .backList {
+                    margin-left: 323px;
+                    button{
+                        margin-top: 20px;
+                        width:100px;
+                        height:40px;
+                        background-color: #4D455D;
+                        color:#fff;
+                        border-radius: 5px;
+                        border: 0;
+                        outline: 0;
+                        font-size: 18px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #E96479;
+                        }  
+                    }
+                }
             }
         }
         .moveCartAlert {
@@ -152,6 +171,9 @@
                             } 
                         }
                     }
+                    .backList {
+                        margin-left: 182px;
+                    }
                 }
             }
             .moveCartAlert {
@@ -204,6 +226,9 @@
                             } 
                         }
                     }
+                    .backList {
+                        margin-left: 220px;
+                    } 
                 }
             }
             .moveCartAlert {

@@ -30,9 +30,11 @@
         transform: translateY(0);
     }
 }
+/* https://port-0-ice-cream-server-6g2llf6iizh7.sel3.cloudtype.app */
 #bg1::after{
     content:"";
-    background-image: url("http://localhost:3000/images/ice16.jpg");
+    /* background-image: url("http://localhost:3000/images/ice16.jpg"); */
+    background-image: url("https://port-0-ice-cream-server-6g2llf6iizh7.sel3.cloudtype.app/images/ice16.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

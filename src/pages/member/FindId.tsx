@@ -44,7 +44,7 @@ const FindId = () => {
         }
     }
     return (
-        <div id="findIdPage" className='inner'>
+        <div id="findIdPage" >
             <div className='findIdForm'>
                 <h2>아이디찾기</h2>
                 {isInfo ? 

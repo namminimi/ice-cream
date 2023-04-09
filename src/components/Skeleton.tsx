@@ -18,8 +18,9 @@ const Skeleton = () => {
                             <div className='skeleton-productList'>
                                 <div className='skeleton-img'/>
                                 <div className='skeleton-productTitle'>
-                                    <h4 className='skeleton-title'/>
+                                    
                                 </div>
+                                <h4 className='skeleton-title'/>
                             </div>
                         </li>
                         )}

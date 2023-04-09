@@ -5,7 +5,6 @@
     max-width: 1000px;
     margin: 0 auto;
     .writeTable{
-        text-align: center;
         tr{
             line-height: 80px;
             td{
@@ -20,7 +19,7 @@
                     &:nth-child(1){
                         width: 680px;
                         font-size: 30px;
-                        padding: 10px; 
+                        padding: 10px 10px; 
                     }
                     &:not(:nth-child(1)){
                         margin-left: 10px;
@@ -61,5 +60,82 @@
                     background-color: #E96479;
                 }
             }
+    }
+}
+
+@media screen and (max-width: 762px) {
+    #writeNotice {
+        max-width: 700px;
+        padding-bottom: 83px;
+        .writeTable{
+            tr{
+                line-height: 80px;
+                td{
+                    input{
+                        width: 120px;
+                        &:nth-child(1){
+                            width: 440px;
+                            font-size: 28px;
+                            padding: 5px; 
+                        }
+                    }
+                    textarea {
+                        width: 700px;
+                        height: 400px; 
+                    }
+                }
+            }
+        }
+        .writeBtn {
+            button{
+                width: 120px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 476px) {
+    #writeNotice {
+        padding-top: 250px;
+        padding-bottom: 135px;
+        max-width: 400px;
+        .writeTable{
+            tr{
+                line-height: 80px;
+                td{
+                    input{
+                        width: 80px;
+                        border-bottom: 1px solid #333;
+                        border-right: 1px solid #333;
+                        &:nth-child(1){
+                            width: 220px;
+                            font-size: 18px;
+                            padding: 5px; 
+                            font-weight: bold; 
+                        }
+                        &:not(:nth-child(1)){
+                            font-size: 15px;
+                            
+                        }
+                    }
+                    textarea {
+                        width: 400px;
+                        height: 300px; 
+                        box-shadow: 0px 0px 0px 0px #333;
+                        font-size: 18px; 
+                    }
+                }
+            }
+        }
+        .writeBtn {
+            button{
+                width: 100px;
+                height: 40px;
+                font-size: 15px;
+                margin-top: 5px;
+            }
+        }
     }
 }

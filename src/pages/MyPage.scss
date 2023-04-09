@@ -1,6 +1,6 @@
 #myPage {
     padding-top: 200px;
-    padding-bottom: 120px;
+    padding-bottom: 110px;
     .myPageForm {
         h2 {
             font-size: 40px;
@@ -62,8 +62,60 @@
         .myPageNotice {
             font-size: 30px;
             text-align: center;
-            margin-top: 50px;
+            margin-top: 80px;
         }
     }
 }
 
+@media screen and (max-width: 762px) {
+    #myPage {
+        padding: 200px 30px 110px;
+    }
+}
+
+@media screen and (max-width: 476px) {
+    #myPage {
+        padding: 200px 30px 80px;
+        .myPageForm {
+            
+            h2 {
+                font-size: 35px;
+            }
+            .myPageList {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 23px;
+            }
+            ul {
+                flex-direction: column;
+                margin-top: 30px;
+                align-items: center;
+                li{
+                    background-color: #fff;
+                    border-radius: 10px;
+                    border: 1px solid #ccc;
+                    margin-bottom: 30px;
+                    height: 160px;
+                    h4{
+                        border-bottom: 1px solid #333;
+                        padding-bottom: 5px;
+                    }
+                    p {
+                        padding-top: 10px;
+                    }
+                }
+                .leave {
+                    h4{
+                        height: 22%;
+                    }
+                }
+            }
+            .myPageNotice {
+                font-size: 28px;
+                text-align: center;
+                margin-top: 40px;
+            }
+        }
+    }
+}

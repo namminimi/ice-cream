@@ -16,7 +16,7 @@
         padding: 30px;
         border-radius: 10px;
         color: #fff;
-        h2 {
+        .leaveH2 {
             font-size: 30px;
         }
         p {
@@ -49,4 +49,24 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 476px) {
+    #leaveMemberDiv {
+    width: 100%;
+    max-width: 450px;
+    top: 60%;
+    .leaveMemberForm{
+        .leaveH2 {
+            font-size: 25px;
+        }
+        p {
+            font-size: 20px;
+        }
+        input {
+            width: 400px;
+            padding-left: 10px;
+        }
+    }
+}
 }

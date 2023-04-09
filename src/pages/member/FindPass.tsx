@@ -49,7 +49,7 @@ const FindPass = () => {
         }
     }
     return (
-        <div id="findPassPage" className='inner'>
+        <div id="findPassPage">
             <div className='findPassForm'>
                 <h2>비밀번호 찾기</h2>
                 <form onSubmit={onSubmit}>

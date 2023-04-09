@@ -33,4 +33,66 @@
     }
 }
 
+@media screen and (max-width: 762px) {
+    #welcome {
+        flex-direction: column;
+        justify-content: space-between;
+        #map {
+            margin:0 auto;
+            width: 60%;
+            height: 250px;
+            border-radius: 10px;
+        }
+        .storeAddress {
+            width: 60%;
+            height: 330px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin:20px auto;
+            h3 {
+                margin-top: 10px;
+                font-size: 23px;
+            }
+            p {
+                margin-top: 10px;
+                margin-left: 0px;
+                font-size: 17px;
+                color: #333;
+                line-height: 25px;
+            }
+        }
+    }
+  }
+
+  @media screen and (max-width: 476px) {
+    #welcome {
+        #map {
+            margin:0 auto;
+            width: 80%;
+            height: 250px;
+            border-radius: 10px;
+        }
+        .storeAddress {
+            width: 80%;
+            height: 330px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin:20px auto;
+            h3 {
+                margin-top: 10px;
+                font-size: 20px;
+            }
+            p {
+                margin-top: 10px;
+                margin-left: 0px;
+                font-size: 15px;
+                color: #333;
+                line-height: 25px;
+            }
+        }
+    }
+  }
+
 

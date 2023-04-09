@@ -1,8 +1,4 @@
 #bg2{
-    /* background-image: url("http://localhost:3000/images/mart2.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover; */
     width: 100%;
     height: 100vh;
     padding: 120px 100px;
@@ -71,3 +67,98 @@
 }
 
 
+@media screen and (max-width: 1260px) {
+    #bg2{
+        padding: 80px 60px;
+        height: 83vh;
+        >h2 {
+            font-size: 45px;
+            margin-bottom: 100px;
+        }
+        
+        .inBg2{
+            .page2IceImgs {
+                .page2IceImg{ 
+                    img{
+                        width: 300px;
+                        height: 200px;
+                        border-radius: 20px;
+                        box-shadow: 10px 10px 30px 5px;
+                    }
+                    .page2Text{
+                        font-size: 17px;
+                        width: 300px;
+                    }
+                }
+            }
+            .sc2{
+                margin-top: 150px;
+                font-size: 25px;
+            }
+        } 
+    }
+  }
+
+  @media screen and (max-width: 762px) {
+    #bg2{
+        padding: 100px 30px;
+        height: 83vh;
+        >h2 {
+            font-size: 35px;
+            margin-bottom: 120px;
+        }
+        
+        .inBg2{
+            .page2IceImgs {
+                .page2IceImg{ 
+                    img{
+                        width: 200px;
+                        height: 150px;
+                        box-shadow: 5px 5px 20px 5px;
+                    }
+                    .page2Text{
+                        font-size: 14px;
+                        width: 200px;
+                    }
+                }
+            }
+            .sc2{
+                margin-top: 180px;
+                font-size: 18px;
+            }
+        } 
+    }
+  }
+
+  @media screen and (max-width: 476px) {
+    #bg2{
+        padding: 70px 30px;
+        height: 115vh;
+        >h2 {
+            font-size: 35px;
+            margin-bottom: 80px;
+        }
+        
+        .inBg2{
+            .page2IceImgs {
+                flex-direction: column;
+                .page2IceImg{ 
+                    img{
+                        width: 200px;
+                        height: 150px;
+                        box-shadow: 5px 5px 20px 5px;
+                    }
+                    .page2Text{
+                        margin-top: 40px;
+                        font-size: 14px;
+                        width: 200px;
+                    }
+                }
+            }
+            .sc2{
+                margin-top: 80px;
+                font-size: 15px;
+            }
+        } 
+    }
+  }

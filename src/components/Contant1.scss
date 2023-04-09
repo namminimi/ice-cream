@@ -15,10 +15,10 @@
         top: 20%;
         transform: translateY(-300px); 
         z-index: 1;
+        
         h1{
             font-size: 80px;
-        }
-        
+        }  
     }
     h2{
         margin-top: 500px;
@@ -37,7 +37,7 @@
     background-position: center center;
     background-size: cover;
     opacity: 0.7;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
     position: absolute;
@@ -47,3 +47,49 @@
     z-index: -1;
 }
 
+
+@media screen and (max-width: 1260px) {
+    #bg1{
+        .sc1{
+            width: 760px;
+            h1{
+                font-size: 58px;
+            }
+        }
+        
+    }
+  }
+
+  @media screen and (max-width: 762px) {
+    #bg1{
+        .sc1{
+            width: 450px;
+            top: 30%;
+            h1{
+                font-size: 34px;
+            }
+        }
+        h2{
+            font-size: 34px
+        }
+    }
+  }
+
+  @media screen and (max-width: 476px) {
+    #bg1{
+        height: 80vh;
+        .sc1{
+            width: 280px;
+            top: 20%;
+            h1{
+                font-size: 35px;
+            }
+        }
+        h2{
+            font-size: 30px
+        }
+    }
+    #bg1::after{
+        height: 80vh;
+    }
+  }

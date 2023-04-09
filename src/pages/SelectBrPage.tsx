@@ -31,8 +31,8 @@ const SelectBrPage = ({datas}:SelectDataType) => {
                 <h2>제품목록</h2>
                 <BrandContainer/>
                 <div className='productLists'>
-                    <ul>
-                        {(postLists as any).map((list:any) =><li key={list.p_no}><Link to={`/productDetail/${list.p_no}`}>
+                    <ul className='prosUls'>
+                        {(postLists as any).map((list:any) =><li className='prosLis' key={list.p_no}><Link to={`/productDetail/${list.p_no}`}>
                             <div className='productList'>
                                 <img src={`${API_URL}/${list.p_img1}`} alt="" />
                                 <div className='productTitle'>

@@ -57,7 +57,7 @@ const Login = () => {
         }
     }
     return (
-        <div id="loginPage" className='inner'>
+        <div id="loginPage" >
             <div className='loginForm'>
                 <h2>로그인</h2>
                 <form onSubmit={onSubmit}>

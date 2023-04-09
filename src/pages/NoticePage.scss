@@ -1,7 +1,6 @@
 #noticePage{
-    padding-top: 200px;
-    padding-bottom: 80px;
-    height: 85vh;
+    padding-top: 305px;
+    padding-bottom: 360px;
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
@@ -75,3 +74,97 @@
         }
     }
 }
+
+@media screen and (max-width: 762px) {
+    #noticePage{
+        max-width: 600px;
+        .noticeForm{
+            h2{
+                font-size: 35px;
+            }
+            .noticeTable {
+                thead{
+                    tr{
+                        &:nth-child(1){
+                            th{
+                                &:nth-child(1){
+                                    width: 10%;
+                                }
+                                &:nth-child(3){
+                                    width: 22%;
+                                }
+                                &:nth-child(4){
+                                    width: 20%;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+    }
+}
+@media screen and (max-width: 476px) {
+    #noticePage{
+        max-width: 400px;
+        .noticeForm{
+            .noticeTable {
+                thead{
+                    tr{
+                        &:nth-child(1){
+                            font-size: 18px;
+                            th{
+                                &:nth-child(1){
+                                    width: 13%;
+                                }
+                                &:nth-child(3){
+                                    width: 20%;
+                                }
+                                &:nth-child(4){
+                                    width: 15%;
+                                }
+                            }
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        line-height: 28px; 
+                        font-size: 15px;
+                        border-bottom: 1px solid #666;
+                        td{
+                            &:nth-child(2){
+                                a {
+                                    &:hover{
+                                        color:#E96479
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .noticeBtn {
+                text-align: right;
+                button{
+                    margin-top: 20px;
+                    width:100px;
+                    height:30px;
+                    background-color: #4D455D;
+                    color:#fff;
+                    border-radius: 5px;
+                    border: 0;
+                    outline: 0;
+                    font-size: 15px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #E96479;
+                    }
+                }
+            }
+        }
+    }
+} 

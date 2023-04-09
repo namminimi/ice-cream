@@ -9,9 +9,26 @@
         text-align: center;
         margin-bottom: 70px;
     }
-    
-
 }
+
+@media screen and (max-width: 1260px) {
+    #bg3{
+        height: 75vh;
+        padding-top: 150px;
+        
+    }
+  }
+
+@media screen and (max-width: 762px) {
+    #bg3{
+        height: 75vh;
+        padding-top: 100px;
+        .sc3{
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+    }
+  }  
 
 
 

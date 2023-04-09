@@ -1,5 +1,5 @@
 #addProduct{
-    padding: 200px 20px;
+    padding: 200px 20px 100px;
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
@@ -38,10 +38,6 @@
                     }
                     div {
                         background-color: #ccc;
-                        
-                        img {
-
-                        }
                     }
                     
                 }
@@ -69,6 +65,43 @@
             &:hover{
                 background-color: #E96479;
             } 
+        }
+    }
+}
+
+
+@media screen and (max-width: 476px) {
+    #addProduct{
+        padding: 200px 20px 50px;
+        h2{
+            font-size: 30px;  
+        }
+        .addProductTable{
+            tbody{
+                tr{
+                    td{
+                        font-size: 15px;
+                        input {
+                            width: 300px;
+                            height: 30px;
+                            font-size: 14px;
+                        }
+                        textarea{
+                            width: 300px;
+                            height: 80px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+                
+            }
+        }
+        .addProBtn{
+            button{
+                width:80px;
+                height:40px;
+                font-size: 15px;
+            }
         }
     }
 }

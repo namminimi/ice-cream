@@ -187,7 +187,7 @@ export const getDatasF = (callback:Function) => async (dispatch: Dispatch) =>{
             dispatch({
                 type: GET_DATAS_SUCCESS, payload: data
             })
-        },7000)
+        },5000)
     }
     catch(e){
         dispatch({type: GET_DATAS_ERROR, error: e})

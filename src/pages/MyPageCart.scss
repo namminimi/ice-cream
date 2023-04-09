@@ -159,3 +159,144 @@
     }
 }
 
+@media screen and (max-width: 762px) {
+    #myPageCart {
+        padding: 200px 30px 22px;
+        .myPageCartForm {
+            .myPageCartDivTable {
+                .myPageCartTable {
+                    max-width: 700px;
+                    margin: 0 auto;
+                    thead {
+                        tr {
+                            line-height: 30px;                                 
+                        }
+                    }
+                    tbody {
+                        tr{
+                            td {
+                                font-size: 18px;
+                                button{
+                                    width: 80px;
+                                    font-size: 13px;  
+                                }
+                            }
+                            .myPageTitle {
+                                height: 150px;
+                                img{
+                                    width: 130px;
+                                    height: 130px;
+                                    margin-top: 10px;
+                                }
+                                span {
+                                    width: 40%;
+                                    padding-top: 40px;
+                                    line-height: 35px;
+                                    h4 {
+                                        font-size: 18px;
+                                    }
+                                    p {
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 476px) {
+    #myPageCart {
+        padding: 200px 30px 22px;
+        .myPageCartForm {
+            .myPageCartList {  
+                font-size: 20px;
+            }
+            .myPageCartDivTable {
+                .myPageCartTable {
+                    max-width: 450px;
+                    margin: 0 auto;
+                    thead {
+                        tr {
+                            line-height: 30px; 
+                            font-size: 15px;
+                            input {
+                                width: 18px;
+                                height: 18px;
+                            }
+                            th {
+                                &:nth-child(2){
+                                    width: 20%;
+                                } 
+                                &:nth-child(4){
+                                    width: 10%;
+                                } 
+                            }                                
+                        }
+                    }
+                    tbody {
+                        tr{
+                            input {
+                                width: 18px;
+                                height: 18px;
+                            }
+                            td {
+                                font-size: 15px;
+                                button{
+                                    width: 70px;
+                                    font-size: 12px;  
+                                }
+                            }
+                            .myPageTitle {
+                                height: 150px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                img{
+                                    width: 80px;
+                                    height: 80px;
+                                    margin-top: 0px;
+                                }
+                                span {
+                                    width: 100%;
+                                    padding-top: 0px;
+                                    line-height: 20px;
+                                    h4 {
+                                        font-size: 15px;
+                                    }
+                                    p {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .cartBtn {
+                    .cartDel {
+                        button{
+                            width: 150px;
+                            font-size: 14px;
+                        }
+                    }
+                    .cartSum {
+                        font-size: 20px;
+                    }
+                }
+                .cartBuy {
+                    button{
+                        width: 150px;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+        }
+    }
+}

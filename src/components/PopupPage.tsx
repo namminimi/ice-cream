@@ -37,9 +37,20 @@ const PopupPage = ({onAddData}: popupPageType) => {
         height: "400px",
         border: "2px solid #666"
     }
+
+    const postCodeStyle2:any = {
+        display: "block",
+        position: "absolute",
+        top: "100%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "350px",
+        height: "350px",
+        border: "2px solid #666"
+    }
     return (
         <div>
-            <DaumPostCode onComplete={handleComplete} style={postCodeStyle}/>
+            <DaumPostCode onComplete={handleComplete} style={window.innerWidth !== 476 ?  postCodeStyle : postCodeStyle2}/>
         </div>
     );
 };

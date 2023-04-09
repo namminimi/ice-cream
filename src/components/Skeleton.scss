@@ -12,10 +12,12 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 50px;
     .skeleton-List {
         width: 25%;
-        padding: 20px;
+        padding: 30px 50px;
         .skeleton-productList {
             border: 1px solid #eee;
             width: 280px;
@@ -47,26 +49,140 @@
                 width: 280px;
                 border-top: 1px solid #ccc;
                 padding-top: 15px;
-                .skeleton-title {
-                    width: 280px;
-                    height: 50px;
-                    background: #f2f2f2;
-                    position: relative;
-                    overflow: hidden;
-                }
-                .skeleton-title::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 80px;
-                    height: 100%;
-                    background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
-                    animation: loading 2s infinite linear;
-                }
+               
+            }
+            .skeleton-title {
+                width: 280px;
+                height: 50px;
+                background: #f2f2f2;
+                position: relative;
+                overflow: hidden;
+            }
+            .skeleton-title::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 80px;
+                height: 100%;
+                background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
+                animation: loading 2s infinite linear;
             }
         }
     }
 }
 
 
+@media screen and (max-width: 1260px) {
+    .skeleton-ListUl {
+        .skeleton-List {
+            .skeleton-productList {
+                width: 230px;
+                height: 330px;
+                .skeleton-img {
+                    width: 230px;
+                    height: 220px; 
+                }
+                .skeleton-productTitle{
+                    width: 200px;
+                }
+                .skeleton-title {
+                        width: 230px;
+                }   
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1006px) {
+    .skeleton-ListUl {
+        .skeleton-List {
+            margin: 30px 30px;
+            width: 25%;
+            .skeleton-productList {
+                width: 230px;
+                height: 330px;
+                .skeleton-img {
+                    width: 230px;
+                    height: 220px; 
+                }
+                .skeleton-productTitle{
+                    width: 200px;
+                }
+                .skeleton-title {
+                        width: 230px;
+                }   
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 762px) {
+    .skeleton-ListUl {
+        .skeleton-List {
+            margin: 30px 30px;
+            width: 40%;
+            .skeleton-productList {
+                width: 230px;
+                height: 330px;
+                .skeleton-img {
+                    width: 230px;
+                    height: 220px; 
+                }
+                .skeleton-productTitle{
+                    width: 200px;
+                }
+                .skeleton-title {
+                        width: 230px;
+                }   
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 622px) {
+    .skeleton-ListUl {
+        .skeleton-List {
+            margin: 30px 10px;
+            width: 40%;
+            padding:0px 50px;
+            .skeleton-productList {
+                width: 230px;
+                height: 330px;
+                .skeleton-img {
+                    width: 230px;
+                    height: 220px; 
+                }
+                .skeleton-productTitle{
+                    width: 200px;
+                }
+                .skeleton-title {
+                        width: 230px;
+                }   
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 476px) {
+    .skeleton-ListUl {
+        .skeleton-List {
+            margin: 30px 70px;
+            width: 50%;
+            .skeleton-productList {
+                width: 230px;
+                height: 330px;
+                .skeleton-img {
+                    width: 230px;
+                    height: 220px; 
+                }
+                .skeleton-productTitle{
+                    width: 200px;
+                }
+                .skeleton-title {
+                        width: 230px;
+                }   
+            }
+        }
+    }
+}

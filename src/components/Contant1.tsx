@@ -8,7 +8,7 @@ const Contant1 = () => {
     const {ref, inView, entry} = useInView({
         threshold:0.1,
     })
-    console.log(ref)
+    //console.log(ref)
     if(inView){
         entry?.target.classList.add("scChange")
     }else{

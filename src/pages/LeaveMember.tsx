@@ -54,7 +54,7 @@ const LeaveMember = ({isMemberState, userId, setMemberState}:LeaveMemberType) =>
     return (
         <div id='leaveMemberDiv' style={{display: isMemberState ? "block" : "none"}}>
             <div className='leaveMemberForm'>
-                <h2>회원 탈퇴하시겠습니까?</h2>
+                <h2 className='leaveH2'>회원 탈퇴하시겠습니까?</h2>
                 <p>비밀번호를 입력해주세요</p>
                 <input type="password" name='password' placeholder='비밀번호를 입력해주세요' value={isLeave.password} onChange={onChange}/>
                 <div className='leaveMemberBtn'>

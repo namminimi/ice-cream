@@ -62,7 +62,7 @@ const EditPass = () => {
         }
     }
     return (
-        <div id="editPassPage" className='inner'>
+        <div id="editPassPage">
             <div className='editPassForm'>
                 <h2>비밀번호 변경하기</h2>
                 <form onSubmit={onSubmit}>

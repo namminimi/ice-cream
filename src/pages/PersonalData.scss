@@ -199,3 +199,74 @@
         }
     }
 }
+
+@media screen and (max-width: 476px) {
+    #personalData {
+        max-width: 450px;
+        .personalDataForm {
+            h2 {
+                font-size: 28px;
+                margin-top: 15px;
+            }
+            form {
+                h2 {
+                    font-size: 22px;
+                    margin-bottom: 10px;
+                }
+                .personalDataTable2 {
+                    .e_information {
+                        h3{
+                            width: 35%;
+                            font-size: 16px;
+                        }
+                        p {
+                            width: 60%;
+                        }
+                        input {
+                            padding-left: 10px;
+                        }
+                        button {
+                            width: 15%;
+                            font-size: 18px;  
+                        }
+                    }
+                    
+                    .e_add {
+                        h3{
+                            margin-bottom: 10px;
+                        }
+                        .addInputBtn{
+                            button {
+                                width: 30%;
+                                font-size: 18px; 
+                            }
+                        }
+                        .addBtnDiv{
+                            .addBtn {
+                                width: 180px;
+                                height: 30px;
+                                background-color: #ccc;
+                                font-size: 18px;
+                                border: 0;
+                                font-weight: bold;
+                                border-radius: 10px;
+                                margin-bottom: 20px;
+                            }
+                        }
+                        
+                    }
+                    
+                
+                }
+                .myPageEditBtn {
+                    margin-top: 30px;
+                    button{
+                        width: 130px;
+                        height: 40px;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

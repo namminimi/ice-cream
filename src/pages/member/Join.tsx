@@ -332,70 +332,155 @@ const Join = () => {
     }
 
     return (
-        <div id="joinPage" className='inner'>
+        <div id="joinPage">
             <div className='joinForm'>
                 <h2>회원가입</h2>
                 <form onSubmit={onSubmit}>
                     <table className='joinTable'>
                         <tbody>
                             <tr>
-                                <td>이름</td>
+                                {window.innerWidth !== 476 ? 
+                                <><td>이름</td>
                                 <td>
                                     <input className='inputText' name="m_name" value={formData.m_name} type="text" onChange={onChange}/>
                                     <div className='message' style={{...textArea}}>{isNameMessage}</div>
-                                </td>
+                                </td></> :
+                                <td>
+                                    <h3>이름</h3>
+                                    <input className='inputText' name="m_name" value={formData.m_name} type="text" onChange={onChange}/>
+                                    <div className='message' style={{...textArea}}>{isNameMessage}</div>
+                                </td>}
                             </tr>
                             <tr>
-                                <td>아이디</td>
+                                {window.innerWidth !== 476 ?
+                                <>
+                                    <td>아이디</td>
+                                    <td>
+                                        <input className='inputText' name="m_id" value={formData.m_id} type="text" onChange={onChange}/>
+                                        <button type="button" onClick={idCheck}>중복확인</button>
+                                        <div className='message' style={{...textArea}}>{isIdMessage}</div>
+                                    </td>
+                                </>:
                                 <td>
+                                    <h3>아이디</h3>
                                     <input className='inputText' name="m_id" value={formData.m_id} type="text" onChange={onChange}/>
                                     <button type="button" onClick={idCheck}>중복확인</button>
                                     <div className='message' style={{...textArea}}>{isIdMessage}</div>
                                 </td>
+                                }
                             </tr>
                             <tr>
-                                <td>닉네임</td>
+                                {window.innerWidth !== 476 ?
+                                <><td>닉네임</td>
                                 <td>
                                     <input className='inputText' name="m_nickname" value={formData.m_nickname} type="text" onChange={onChange}/>
                                     <button type="button" onClick={nickNameCheck} >중복확인</button>
                                     <div className='message' style={{...textArea}}>{isNickMessage}</div>
+                                </td></>:
+                                <td>
+                                    <h3>닉네임</h3>
+                                    <input className='inputText' name="m_nickname" value={formData.m_nickname} type="text" onChange={onChange}/>
+                                    <button type="button" onClick={nickNameCheck} >중복확인</button>
+                                    <div className='message' style={{...textArea}}>{isNickMessage}</div>
                                 </td>
+                                }
                             </tr>
                             <tr>
-                                <td>비밀번호</td>
+                                {window.innerWidth !== 476 ?
+                                <>
+                                    <td>비밀번호</td>
+                                    <td>
+                                        <input className='inputText' name="m_password" value={formData.m_password} type="password" onChange={onChange}/>
+                                        <div className='message' style={{...textArea}}>{isPassMessage}</div>
+                                    </td>
+                                </>:
                                 <td>
+                                    <h3>비밀번호</h3>
                                     <input className='inputText' name="m_password" value={formData.m_password} type="password" onChange={onChange}/>
                                     <div className='message' style={{...textArea}}>{isPassMessage}</div>
                                 </td>
+                                }
                             </tr>
                             <tr>
-                                <td>비밀번호확인</td>
+                                {window.innerWidth !== 476 ?
+                                <>
+                                    <td>비밀번호확인</td>
+                                    <td>
+                                        <input className='inputText' name='m_passwordCh' value={formData.m_passwordCh} type="password" onChange={onChange}/>
+                                        <div className='message' style={{...textArea}}>{isPassChMessage}</div>
+                                    </td>
+                                </>:
                                 <td>
+                                    <h3>비밀번호확인</h3>
                                     <input className='inputText' name='m_passwordCh' value={formData.m_passwordCh} type="password" onChange={onChange}/>
                                     <div className='message' style={{...textArea}}>{isPassChMessage}</div>
                                 </td>
+                                }
                             </tr>
                             <tr>
-                                <td>생년월일</td>
+                                {window.innerWidth !== 476 ?
+                                <>
+                                    <td>생년월일</td>
+                                    <td>
+                                        <input className='inputText' name="m_birth" value={formData.m_birth} type="text" placeholder='"-"를 제외한 숫자8자 입력해주세요. ex)19900513' onChange={onChange}/>
+                                        <div className='message' style={{...textArea}}>{isbirMessage}</div>
+                                    </td>
+                                </>:
                                 <td>
+                                    <h3>생년월일</h3>
                                     <input className='inputText' name="m_birth" value={formData.m_birth} type="text" placeholder='"-"를 제외한 숫자8자 입력해주세요. ex)19900513' onChange={onChange}/>
                                     <div className='message' style={{...textArea}}>{isbirMessage}</div>
                                 </td>
+                                }
                             </tr>
                             <tr>
-                                <td>성별</td>
-                                <td>남 <input className='inputRadio' name="m_gender" value="남" type="radio" onChange={onChange}/> 여 <input className='inputRadio' name="m_gender" value="여" type="radio" onChange={onChange}/></td>
-                            </tr>
-                            <tr>
-                                <td>전화번호</td>
+                                {window.innerWidth !== 476 ?
+                                <>
+                                    <td>성별</td>
+                                    <td>남 <input className='inputRadio' name="m_gender" value="남" type="radio" onChange={onChange}/> 여 <input className='inputRadio' name="m_gender" value="여" type="radio" onChange={onChange}/>
+                                    </td>
+                                </>:
                                 <td>
+                                    <h3>성별</h3>남 <input className='inputRadio' name="m_gender" value="남" type="radio" onChange={onChange}/> 여 <input className='inputRadio' name="m_gender" value="여" type="radio" onChange={onChange}/>
+                                </td>}
+                            </tr>
+                            <tr>
+                                {window.innerWidth !== 476 ?
+                                <>
+                                    <td>전화번호</td>
+                                    <td>
+                                        <input className='inputText' name="m_phone" value={formData.m_phone} type="text" placeholder='"-"를 제외한 숫자를 입력해주세요.' onChange={onChange}/>
+                                        <div className='message' style={{...textArea}}>{isPhoneMessage}</div>
+                                    </td>
+                                </>:
+                                <td>
+                                    <h3>전화번호</h3>
                                     <input className='inputText' name="m_phone" value={formData.m_phone} type="text" placeholder='"-"를 제외한 숫자를 입력해주세요.' onChange={onChange}/>
                                     <div className='message' style={{...textArea}}>{isPhoneMessage}</div>
                                 </td>
+                                }
                             </tr>
                             <tr className='addForm'>
-                                <td>주소</td>
+                                {window.innerWidth !== 476 ?
+                                <>
+                                    <td>주소</td>
+                                    <td>
+                                        <input className='inputText' name='m_add1' type="text" value={formData.m_add1} onChange={onChange}/>
+                                        <button type="button" onClick={openPostCode}>우편번호 검색</button>
+                                        <input className='inputText' name='m_add2' type="text" value={formData.m_add2} onChange={onChange}  placeholder="상세주소"/>
+                                        {isPopupOpen && (<button className='postCode_btn' onClick={()=>{closePostCode()}}>입력</button>)}
+                                        <div className='message' style={{...textArea}}>{isaddMessage}</div>
+                                        <div id='popupDom'>
+                                            {isPopupOpen && (
+                                                <PopupDom>
+                                                    <PopupPage onAddData={onAddData}></PopupPage>
+                                                </PopupDom>
+                                            )}
+                                        </div>
+                                    </td>
+                                </>:
                                 <td>
+                                    <h3>주소</h3>
                                     <input className='inputText' name='m_add1' type="text" value={formData.m_add1} onChange={onChange}/>
                                     <button type="button" onClick={openPostCode}>우편번호 검색</button>
                                     <input className='inputText' name='m_add2' type="text" value={formData.m_add2} onChange={onChange}  placeholder="상세주소"/>
@@ -409,14 +494,25 @@ const Join = () => {
                                         )}
                                     </div>
                                 </td>
+                                }
                             </tr>
                             <tr>
-                                <td>추천인</td>
+                                {window.innerWidth !== 476 ?
+                                <>
+                                    <td>추천인</td>
+                                    <td>
+                                        <input className='inputText' name="m_comnick" value={formData.m_comnick} onChange={onChange} type="text"/>
+                                        <button type="button" onClick={comNickNameCheck}>추천인 확인</button>
+                                        <div className='message' style={{...textArea}}>{isComNickMessage}</div>
+                                    </td>
+                                </>:
                                 <td>
+                                    <h3>추천인</h3>
                                     <input className='inputText' name="m_comnick" value={formData.m_comnick} onChange={onChange} type="text"/>
                                     <button type="button" onClick={comNickNameCheck}>추천인 확인</button>
                                     <div className='message' style={{...textArea}}>{isComNickMessage}</div>
                                 </td>
+                                }
                             </tr>
                         </tbody>
                     </table>

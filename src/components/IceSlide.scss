@@ -12,4 +12,36 @@
     }
 }
 
+@media screen and (max-width: 1260px) {
+    .moreIce{
+        top:85%;
+        div{
+            img{
+                width:200px;
+            }
+        }
+    }
+  }
+
+  @media screen and (max-width: 762px) {
+    .moreIce{
+        top:90%;
+        div{
+            img{
+                width:180px;
+            }
+        }
+    }
+  }
+  @media screen and (max-width: 476px) {
+    .moreIce{
+        top:100%;
+        div{
+            img{
+                width:120px;
+            }
+        }
+    }
+  }    
+
 

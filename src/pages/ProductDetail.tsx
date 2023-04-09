@@ -75,7 +75,7 @@ const ProductDetail = ({data}:DetailDataType) => {
                                 <tr>
                                     <td>종류:</td>
                                     <td>
-                                    <select style={{width:"100px"}} name="c_taste" value={isDetailProduct.c_taste} onChange={onChange}>
+                                    <select name="c_taste" value={isDetailProduct.c_taste} onChange={onChange}>
                                         {(taste as any).map((one:any, index:number)=> 
                                         <option value={one} id="ss">{one}</option>
                                         )}

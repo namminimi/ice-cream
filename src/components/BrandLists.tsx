@@ -11,15 +11,14 @@ type BrandDataType = {
 const BrandLists = ({data, onToggle}:BrandDataType) => {
     console.log(data)
     
-    
     return (
         <div className='brand'>
             <ul>
-            {data.map(br =><li key={br.brandList}  
+            {data.map((br, index) =><li key={br.brandList}  
             onClick={()=>{onToggle(br.brandList)}}>
                     <Link to={`/iceCreamList/${br.brandList}`}><p style={{fontSize: br.isDone ? "30px" : "20px"}}>
                         {br.brandList}</p></Link>
-                    <p>/</p>
+                    {data.length-1 !== index ? <p>/</p> :null}
                 </li>
             )}
             </ul> 

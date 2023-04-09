@@ -12,7 +12,7 @@ const CartContainer = () => {
     const {id} = useParams();
     const {loading, data, error} = useSelector((state:rootState)=>state.iceProduct.cartList)
     const dispatch = useDispatch<any>();
-    
+    //console.log(id)
 
     const cartDates = async () =>{
         const data = await axios.get(`${API_URL}/sendCart/${id}`)
@@ -31,7 +31,7 @@ const CartContainer = () => {
     if(!data) return <div>데이터가 없습니다.</div>
     return (
         <div>
-            <MyPageCart data={data} reDispatch={reDispatch}/>
+            <MyPageCart data={data} reDispatch={reDispatch} userId={id}/>
         </div>
     );
 };

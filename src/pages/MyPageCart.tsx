@@ -3,13 +3,16 @@ import React, {useState, useCallback} from 'react';
 import { CartDatas } from '../apis/dataType';
 import { API_URL } from '../config/apirul';
 import "./MyPageCart.scss"
+import MyPageSelectContainer from '../containers/MyPageSelectContainer';
 
 type MyPageCartDataType = {
     data: CartDatas
     reDispatch : () => void
+    userId:string | undefined
 }
 
-const MyPageCart = ({data, reDispatch}:MyPageCartDataType) => {
+const MyPageCart = ({data, reDispatch, userId}:MyPageCartDataType) => {
+    //console.log(userId)
     const [checkedList, setCheckedLists] = useState<(string | number)[]>([])
     let sum = 0
     const [isSum, setSum] = useState(0)
@@ -116,11 +119,7 @@ console.log(checkedList)
         <div id="myPageCart" className='inner'>
             <div className='myPageCartForm'>
                 <h2>마이페이지</h2>
-                <div className='myPageCartList'>
-                    <p>장바구니</p>
-                    <p>/</p>
-                    <p>정보수정 및 회원 탈퇴</p>
-                </div>
+                <MyPageSelectContainer userId={userId}/>
                 <h3>내 장바구니</h3>
                 <div className='myPageCartDivTable'>
                     <table className='myPageCartTable'>

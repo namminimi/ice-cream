@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { getCookie } from '../util/cookie';
 import LeaveMember from './LeaveMember';
 import "./MyPage.scss"
+import MyPageSelectContainer from '../containers/MyPageSelectContainer';
+
 const MyPage = () => {
     const userId = getCookie('userId')
     const [isMemberState, setMemberState] = useState(false)
@@ -15,14 +17,10 @@ const MyPage = () => {
         <div id="myPage" className='inner'>
             <div className='myPageForm'>
                 <h2>마이페이지</h2>
-                <div className='myPageList'>
-                    <p>장바구니</p>
-                    <p>/</p>
-                    <p>정보수정 및 회원 탈퇴</p>
-                </div>
+                <MyPageSelectContainer userId={userId}/>
                 <h3>내 정보수정 및 회원 탈퇴</h3>
                 {window.innerWidth !== 476 ?
-                <ul>
+                <ul className='catagoryList'>
                     <li>
                         <Link to='/editPass'>
                             <h4>비밀번호 변경하기</h4>
@@ -40,7 +38,7 @@ const MyPage = () => {
                         <p>회원 탈퇴를 원하시면 클릭해주세요</p>
                     </li>
                 </ul>:
-                <ul>
+                <ul className='catagoryList'>
                     <li>
                         <Link to='/editPass'>
                             <h4>비밀번호 변경하기</h4>

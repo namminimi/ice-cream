@@ -8,18 +8,26 @@
             text-align: center;
         }
         .myPageList {
-            display: flex;
-            justify-content: center;
-            font-size: 25px;
-            margin-bottom: 40px;
-            p{
-                padding-left: 30px;
-            } 
+            .myPageUl{
+                display: flex;
+                justify-content: center;
+                font-size: 25px;
+                margin-bottom: 40px;
+                li{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    p{
+                        padding-left: 30px;
+                    } 
+                }
+            }
+            
         }
         h3 {
             font-size: 30px;
         }
-        ul {
+        .catagoryList {
             display: flex;
             margin-top: 50px;
             justify-content: space-around;
@@ -77,17 +85,13 @@
     #myPage {
         padding: 200px 30px 80px;
         .myPageForm {
-            
             h2 {
                 font-size: 35px;
-            }
-            .myPageList {
-                font-size: 20px;
             }
             h3 {
                 font-size: 23px;
             }
-            ul {
+            .catagoryList {
                 flex-direction: column;
                 margin-top: 30px;
                 align-items: center;

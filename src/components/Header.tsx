@@ -7,6 +7,7 @@ import { rootState } from '../moduls';
 import { setLogin, setLogOut } from '../moduls/loginM';
 import { getCookie, removeCookie } from '../util/cookie';
 import { get_select } from '../moduls/brand';
+import { get_myPage_select } from '../moduls/myPage';
 //import "./Header.scss"
 
 
@@ -272,6 +273,7 @@ const NavDiv = styled.div`
 const Header = () => {
     const {isLogin} = useSelector((state : rootState )=>state.loginM)
     const onToggle = (brandList:string) => dispatch(get_select(brandList))
+    const onToggle2 = (id:number) => dispatch(get_myPage_select(id))
     const username = getCookie("userNickName")
     const userId = getCookie("userId")
     const dispatch = useDispatch();
@@ -317,8 +319,8 @@ const Header = () => {
                             <div>{username}님 반갑습니다</div>
                             <ul className='joinList'>
                                 <li onClick={logoutClick}>로그아웃</li>
-                                <li><Link to={`/mypage/${userId}`}>마이페이지</Link></li>
-                                <li><Link to={`/myPageCart/${userId}`}>장바구니</Link></li>
+                                <li onClick={()=>onToggle2(2)}><Link to={`/mypage/${userId}`}>마이페이지</Link></li>
+                                <li onClick={()=>onToggle2(1)}><Link to={`/myPageCart/${userId}`}>장바구니</Link></li>
                             </ul>
                         </li>   
                         {isLogin && userId == "admin" ? <li className='joinList2'><Link to='/addProduct'>상품등록</Link></li> : null}

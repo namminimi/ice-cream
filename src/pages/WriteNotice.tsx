@@ -11,9 +11,9 @@ const WriteNotice = () => {
     let year = time.getFullYear();
     let month = time.getMonth()+1;
     let date = time.getDate();
-    console.log(date)
-    console.log(year)
-    console.log(month)
+    //console.log(date)
+    //console.log(year)
+    //console.log(month)
     
 
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ const WriteNotice = () => {
         console.log("작성 요청")
         axios.post(`${API_URL}/writeNotice`, isText)
         .then(res => {
-            console.log(res)
+            //console.log(res)
             alert('작성이 완료되었습니다')
             navigate("/notice")
         })

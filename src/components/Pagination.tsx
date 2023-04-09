@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./Pagination.scss"
 
 type paginationType = {
     postsPerPage: number;

@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# 🖥️ 프로젝트 소개
+TypeScript-React를 활용한 웹사이트 만들기(아이스크림 판매)
+<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🕰️ 개발 기간
+* 23.03.09 - 23.04.07
 
-## Available Scripts
+### ⚙️ 사용한 스킬
+Html, Css, Sass, JavaScript, React, Redux, TypeScript, MySQL, GitHub, Git
 
-In the project directory, you can run:
+## 📌 주요 기능
+#### 로그인
+- ID찾기, PW찾기
+- 로그인 시 react-cookie에 setcookie함수 사용하여 쿠키(Cookie) 생성
 
-### `npm start`
+#### 회원가입
+- 다음 주소(react-daum-postcode) API 사용
+- ID 중복 체크
+- NickName 중복 체크
+- bcrypt 사용하여 비밀번호 암호화
+- 정규표현식 사용하여 사용자가 알맞는 값을 입력하게 메세지 출력
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### 로그아웃
+- 유지시간 60분 설정, 유지시간 지날 시 자동로그아웃
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### 마이 페이지
+- 다음 주소(react-daum-postcode) API 사용
+- 회원정보 변경
+- 회원 탈퇴
 
-### `npm test`
+#### 검색
+- 찾는 아이스크림명 글자 1자 이상 입력 시 리스트 출력
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 상품 등록
+- 관리자id로만 접근 가능
+- multer 사용하여 이미지 등록
+- 등록한 이미지 미리보기
 
-### `npm run build`
+#### 상품리스트 페이지
+- 각 제조사태그 클릭 시 해당 제조사 리스트 출력
+- 로딩페이지 스켈레톤 기능
+- 페이징 기능
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 상품 상세보기 페이지
+- 장바구니 담기
+- react-slick API 사용(커스텀이미지 슬라이드)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### 장바구니 페이지
+- 전체선택할 수 있는 체크박스, 각 상품 선택할 수 있는 체크박스
+- 체크박스 클릭 시 결제금액 표시
+- 전체삭제, 선택삭제
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 공지사항 페이지
+- 관리자 id만 글 등록, 수정, 삭제 가능
+- 관리자 id를 제외한 다른 사용자는 읽기만 가능
+- 페이징 기능
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### 메인페이지
+- react-slick API 사용(상품광고이미지 슬라이드)
+- react-intersection-observer API 사용
+(메인페이지에 원하는 스크롤값 범위 안에 들어올 시 입력한 문자값 출력)
+- kakao maps API 사용(가상의 매장 위치)

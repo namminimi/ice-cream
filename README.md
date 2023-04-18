@@ -8,7 +8,7 @@ TypeScript-React를 활용한 웹사이트 만들기(아이스크림 판매)
 ### ⚙️ 사용한 스킬
 Html, Css, Sass, JavaScript, React, Redux, TypeScript, MySQL, GitHub, Git
 
-####관리자
+#### 관리자
 -Id: admin
 -password: admin1234$!!
 

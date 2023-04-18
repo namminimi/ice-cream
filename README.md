@@ -28,7 +28,7 @@ Html, Css, Sass, JavaScript, React, Redux, TypeScript, MySQL, GitHub, Git
 - 회원정보 변경
 - 회원 탈퇴
 
-#### 검색 <a href="https://github.com/namminimi/ice-cream/wiki/%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C4(%EC%83%81%ED%92%88)#%EF%B8%8F-%EC%83%81%ED%92%88-%EA%B2%80%EC%83%89>상세보기 - WIKI 이동</a>
+#### 검색 <a href="https://github.com/namminimi/ice-cream/wiki/%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C4(%EC%83%81%ED%92%88)#%EF%B8%8F-%EC%83%81%ED%92%88-%EA%B2%80%EC%83%89">상세보기 - WIKI 이동</a>
 - 찾는 아이스크림명 글자 1자 이상 입력 시 리스트 출력
 
 #### 상품 등록 <a href="https://github.com/namminimi/ice-cream/wiki/%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C3(%EC%83%81%ED%92%88-%EB%93%B1%EB%A1%9D)" >

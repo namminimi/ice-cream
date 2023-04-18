@@ -10,6 +10,7 @@ Html, Css, Sass, JavaScript, React, Redux, TypeScript, MySQL, GitHub, Git
 
 #### 관리자
 -Id: admin
+
 -password: admin1234$!!
 
 ## 📌 주요 기능

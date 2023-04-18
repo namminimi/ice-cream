@@ -8,6 +8,10 @@ TypeScript-React를 활용한 웹사이트 만들기(아이스크림 판매)
 ### ⚙️ 사용한 스킬
 Html, Css, Sass, JavaScript, React, Redux, TypeScript, MySQL, GitHub, Git
 
+####관리자
+-Id: admin
+-password: admin1234$!!
+
 ## 📌 주요 기능
 #### 로그인 <a href="https://github.com/namminimi/ice-cream/wiki/%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C2(%EB%A1%9C%EA%B7%B8%EC%9D%B8)" >상세보기 - WIKI 이동</a>
 - ID찾기, PW찾기

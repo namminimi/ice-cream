@@ -38,7 +38,7 @@ const GET_CARTDATA_ERROR = "GET_CARTDATA_ERROR" as const
 
 //액션함수
 export const getDatas = () => ({type: GET_DATAS})
-export const getDatasSuccess = (data: iceCreamData2) => ({type: GET_DATAS_SUCCESS, payload: data})
+export const getDatasSuccess = (data: iceCreamData2[]) => ({type: GET_DATAS_SUCCESS, payload: data})
 export const getDatasError = (error: AxiosError) => ({type: GET_DATAS_ERROR, payload: error})
 
 export const getData = () => ({type: GET_DATA})
@@ -46,16 +46,16 @@ export const getDataSuccess = (data: iceCreamData2) => ({type: GET_DATA_SUCCESS,
 export const getDataError = (error: AxiosError) => ({type: GET_DATA_ERROR, payload: error})
 //검색 액션 함수
 export const getSearchDatas = () => ({type: GET_SEARCHDATAS})
-export const getSearchDatasSuccess = (data: iceCreamData2) => ({type: GET_SEARCHDATAS_SUCCESS, payload: data})
+export const getSearchDatasSuccess = (data: iceCreamData2[]) => ({type: GET_SEARCHDATAS_SUCCESS, payload: data})
 export const getSearchDatasError = (error: AxiosError) => ({type: GET_SEARCHDATAS_ERROR, payload: error})
 //브랜드별 액션 함수
 export const getBrandDatas = () => ({type: GET_BRANDDATAS})
-export const getBrandDatasSuccess = (data: BrandDatas) => ({type: GET_BRANDDATAS_SUCCESS, payload: data})
+export const getBrandDatasSuccess = (data: BrandDatas[]) => ({type: GET_BRANDDATAS_SUCCESS, payload: data})
 export const getBrandDatasError = (error: AxiosError) => ({type: GET_BRANDDATAS_ERROR, payload: error})
 
 //공지사항 액션함수
 export const getNoticeDatas = () => ({type: GET_NOTICEDATAS})
-export const getNoticeDatasSuccess = (data: NoticeDatas) => ({type: GET_NOTICEDATAS_SUCCESS, payload: data})
+export const getNoticeDatasSuccess = (data: NoticeDatas[]) => ({type: GET_NOTICEDATAS_SUCCESS, payload: data})
 export const getNoticeDatasError = (error: AxiosError) => ({type: GET_NOTICEDATAS_ERROR, payload: error})
 
 export const getNoticeData = () => ({type: GET_NOTICEDATA})
@@ -64,7 +64,7 @@ export const getNoticeDataError = (error: AxiosError) => ({type: GET_NOTICEDATA_
 
 //장바구니 액션함수
 export const getCartData = () => ({type: GET_CARTDATA})
-export const getCartDataSuccess = (data: CartDatas) => ({type: GET_CARTDATA_SUCCESS, payload: data})
+export const getCartDataSuccess = (data: CartDatas[]) => ({type: GET_CARTDATA_SUCCESS, payload: data})
 export const getCartDataError = (error: AxiosError) => ({type: GET_CARTDATA_ERROR, payload: error})
 ///////////////
 
@@ -96,7 +96,7 @@ type DataAction = ReturnType<typeof getDatas>
 export type DataState = {
     iceProducts: {
         loading: boolean;
-        data: null | iceCreamData2;
+        data: null | iceCreamData2[];
         error: null | Error;
     },
     iceProduct: {
@@ -106,17 +106,17 @@ export type DataState = {
     },
     searchResult: {
         loading: boolean;
-        data: null | iceCreamData2;
+        data: null | iceCreamData2[];
         error: null | Error;
     },
     brandsList: {
         loading: boolean;
-        data: null | BrandDatas;
+        data: null | BrandDatas[];
         error: null | Error;
     }
     noticeLists: {
         loading: boolean;
-        data: null | NoticeDatas;
+        data: null | NoticeDatas[];
         error: null | Error;
     }
     noticeList: {
@@ -126,7 +126,7 @@ export type DataState = {
     }
     cartList: {
         loading: boolean;
-        data: null | CartDatas;
+        data: null | CartDatas[];
         error: null | Error;
     }
 }
@@ -172,9 +172,6 @@ const initialState: DataState = {
     }
 }
 ////////////////////////
-/* type CallbackType = {
-    callback: () => void
-} */
 
 //thunk함수
 export const getDatasF = (callback:Function) => async (dispatch: Dispatch) =>{

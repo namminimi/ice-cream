@@ -7,14 +7,14 @@ export const get_myPage_select = (id:number) => ({
 
 type MyPageAction = ReturnType<typeof get_myPage_select>
 
-type IsMyPageType = {
+export type IsMyPageType = {
     id: number,
     text: string,
     link: string,
     isDone: boolean
 }
 
-export type IsMyPageState = IsMyPageType[]
+type IsMyPageState = IsMyPageType[]
 
 const isMyPage: IsMyPageState = [
     {id: 1, text: "장바구니", link: "myPageCart" ,isDone: false},

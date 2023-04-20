@@ -1,9 +1,9 @@
 import React from 'react';
-import { IsMyPageState } from '../moduls/myPage';
+import {IsMyPageType } from '../moduls/myPage';
 import { Link } from 'react-router-dom';
 
 type MyPageListType = {
-    myPageList: IsMyPageState
+    myPageList: IsMyPageType[]
     onToggle: (id:number) => void
     userId: string | undefined
 }

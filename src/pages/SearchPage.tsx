@@ -5,8 +5,8 @@ import SearchBlock from '../components/SearchBlock';
 import { API_URL } from '../config/apirul';
 
 type SearchType = {
-    data: iceCreamData2,
-    title: any
+    data: iceCreamData2[],
+    title: string | undefined
 }
 
 
@@ -18,9 +18,9 @@ const SearchPage = ({data, title}:SearchType) => {
             <div className='iceCreamProducts'>
                 <SearchBlock/>
                 <div className='productLists'>
-                    <h2>검색결과 : {title}....{(data as any).length}건 있습니다</h2>
+                    <h2>검색결과 : {title}....{data.length}건 있습니다</h2>
                     <ul className='prosUls'>
-                        {(data as any).map((list:any) =><li className='prosLis' key={list.p_no}><Link to={`/productDetail/${list.p_no}`}>
+                        {data.map(list =><li className='prosLis' key={list.p_no}><Link to={`/productDetail/${list.p_no}`}>
                             <div className='productList'>
                                 <img src={`${API_URL}/${list.p_img1}`} alt="" />
                                 <div className='productTitle'>

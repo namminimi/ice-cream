@@ -7,13 +7,13 @@ export const get_select = (brandList:string) => ({
 
 type BrandAction = ReturnType<typeof get_select>
 
-type IsBrandType = {
+export type IsBrandType = {
     id: number,
     brandList: string,
     isDone: boolean
 }
 
-export type IsBrandState = IsBrandType[]
+type IsBrandState = IsBrandType[]
 
 const isBrand: IsBrandState = [
     {id: 1, brandList: "전체", isDone: false},

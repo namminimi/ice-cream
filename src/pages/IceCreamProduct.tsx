@@ -8,7 +8,7 @@ import "./IceCreamProduct.scss"
 import Pagination from '../components/Pagination';
 
 type DataType = {
-    datas: iceCreamData2 | null
+    datas: iceCreamData2[]
     loading: boolean
 }
 
@@ -23,8 +23,8 @@ const IceCreamProduct = ({datas, loading}:DataType) => {
     const indexOfFirst = indexOfLast - postsPerPage; // 페이지 첫번째 수 ex 10 - 10 = 0
 
     //데이터 몇번까지 자르기
-    const currentPosts = (data: iceCreamData2 | null) => {
-        let currentPosts = (data as any).slice(indexOfFirst, indexOfLast)
+    const currentPosts = (data: iceCreamData2[]) => {
+        let currentPosts = data.slice(indexOfFirst, indexOfLast)
         return currentPosts;
     }
     const postLists = currentPosts(datas)
@@ -36,7 +36,7 @@ const IceCreamProduct = ({datas, loading}:DataType) => {
                 <BrandContainer/>
                 <div className='productLists'>
                     <ul className='prosUls'>
-                        {(postLists as any).map((list:any) =><li className='prosLis' key={list.p_no}><Link to={`/productDetail/${list.p_no}`}>
+                        {postLists.map(list =><li className='prosLis' key={list.p_no}><Link to={`/productDetail/${list.p_no}`}>
                             <div className='productList'>
                                 <img src={`${API_URL}/${list.p_img1}`} alt=""/>
                                 <div className='productTitle'>
@@ -50,7 +50,7 @@ const IceCreamProduct = ({datas, loading}:DataType) => {
                 <div className='paging'>
                     <Pagination
                     postsPerPage={postsPerPage}
-                    totalPosts={(datas as any).length}
+                    totalPosts={datas.length}
                     paginate={setCurrentPage}
                     currentPage={currentPage}/>
                 </div>

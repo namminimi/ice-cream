@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 const SearchBlock = () => {
-    const [isSearch, setSearch] = useState<any>("")
+    const [isSearch, setSearch] = useState("")
 
     const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         setSearch(e.target.value)

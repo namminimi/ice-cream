@@ -13,6 +13,7 @@ export interface iceCreamData {
 }
 
 export interface iceCreamData2 {
+    p_no?: number
     p_img?: any;
     p_title: string;
     p_dsce: string;
@@ -48,4 +49,5 @@ export interface CartDatas {
     c_img: string;
     c_point: number;
     c_price: number;
+    c_brand: string;
 }

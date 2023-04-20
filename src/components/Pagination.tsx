@@ -4,7 +4,7 @@ import "./Pagination.scss"
 type paginationType = {
     postsPerPage: number;
     totalPosts: number;
-    paginate: any;
+    paginate: React.Dispatch<React.SetStateAction<number>>;
     currentPage: number
 
 }

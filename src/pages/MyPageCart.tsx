@@ -6,7 +6,7 @@ import "./MyPageCart.scss"
 import MyPageSelectContainer from '../containers/MyPageSelectContainer';
 
 type MyPageCartDataType = {
-    data: CartDatas
+    data: CartDatas[]
     reDispatch : () => void
     userId:string | undefined
 }
@@ -26,15 +26,13 @@ const MyPageCart = ({data, reDispatch, userId}:MyPageCartDataType) => {
     }
     
     //전체 체크 클릭시 발생
-    
-    
     const onCheckedAll = useCallback(
         (checked: boolean) => {
             //console.log(checked)
             if(checked) {
                 //console.log(1111);
-                const checkedListArray: any [] = [];
-                (data as any).forEach((list: any)=> {
+                const checkedListArray: any[] = [];
+                data.forEach(list=> {
                     checkedListArray.push(list)
                 })
                 //console.log(checkedListArray)
@@ -90,7 +88,7 @@ console.log(checkedList)
     let daSum = 0
     let sumPrice:string= "";
     let sumPriceArray: string[] = [];
-    (data as any).forEach((da:any) => {
+    data.forEach(da => {
         //console.log(da.c_price* da.c_amount)
         daSum = da.c_price * da.c_amount
         sumPrice = daSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -137,27 +135,27 @@ console.log(checkedList)
                             </tr>
                         </thead>
                         <tbody>   
-                            {(data as any).map((li:any, index:number)=>
+                            {data.map((lis: any, index:number)=>
                             <tr>
                                 <td>
-                                    <input type="checkbox" key={li.c_no}  onChange={(e)=> onCheckedElement(e.target.checked, li) }
-                                    checked={checkedList.includes(li) ? true : false}/>
+                                    <input type="checkbox" key={lis.c_no}  onChange={(e)=> onCheckedElement(e.target.checked, lis) }
+                                    checked={checkedList.includes(lis) ? true : false}/>
                                 </td>
                                 <td className='myPageTitle'>
-                                    <img src={`${API_URL}/${li.c_img}`} alt="" width="200px" height="200px"/>
+                                    <img src={`${API_URL}/${lis.c_img}`} alt="" width="200px" height="200px"/>
                                     <span>
-                                        <h4>[{li.c_brand}]</h4>
-                                        <p>{li.c_title}/{li.c_taste}</p>
+                                        <h4>[{lis.c_brand}]</h4>
+                                        <p>{lis.c_title}/{lis.c_taste}</p>
                                     </span>
                                 </td>
                                 <td>
                                     <p>{sumPriceArray[index]}</p>
                                 </td>
                                 <td>
-                                    <p>{li.c_amount}</p>
+                                    <p>{lis.c_amount}</p>
                                 </td>
                                 <td>
-                                    <p>{li.c_point}P</p>
+                                    <p>{lis.c_point}P</p>
                                 </td>
                                 <td>
                                     <button type='button'>구매하기</button>

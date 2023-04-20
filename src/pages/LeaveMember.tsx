@@ -10,7 +10,7 @@ import './LeaveMember.scss'
 type LeaveMemberType = {
     isMemberState: boolean,
     userId: string,
-    setMemberState: any
+    setMemberState: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const LeaveMember = ({isMemberState, userId, setMemberState}:LeaveMemberType) => {

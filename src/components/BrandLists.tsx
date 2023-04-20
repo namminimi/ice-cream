@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IsBrandState } from '../moduls/brand';
+import { IsBrandType } from '../moduls/brand';
 
 type BrandDataType = {
-    data: IsBrandState
+    data: IsBrandType[]
     onToggle: (brandList:string) => void
 }
 

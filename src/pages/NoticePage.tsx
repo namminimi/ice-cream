@@ -8,7 +8,7 @@ import "./NoticePage.scss"
 import Pagination from '../components/Pagination';
 
 type NoticeDataType = {
-    data: NoticeDatas
+    data: NoticeDatas[]
 }
 
 const NoticePage = ({data}:NoticeDataType) => {
@@ -20,8 +20,8 @@ const NoticePage = ({data}:NoticeDataType) => {
     const indexOfFirst = indexOfLast - postsPerPage; // 페이지 첫번째 수 ex 10 - 10 = 0
 
     //데이터 몇번까지 자르기
-    const currentPosts = (data: NoticeDatas | null) => {
-        let currentPosts = (data as any).slice(indexOfFirst, indexOfLast)
+    const currentPosts = (data: NoticeDatas[]) => {
+        let currentPosts = data.slice(indexOfFirst, indexOfLast)
         return currentPosts;
     }
     //console.log(data)
@@ -44,9 +44,9 @@ const NoticePage = ({data}:NoticeDataType) => {
                         </tr>
                     </thead>
                     <tbody>
-                    {(postLists as any).map((note:any, index:number) =>
+                    {postLists.map((note, index:number) =>
                         <tr key={note.w_no}>
-                            <td>{note.w_no-4}</td>
+                            <td>{note.w_no!-4}</td>
                             <td><Link to={`/notice/${note.w_no}`}>{note.w_title}</Link></td>
                             <td>{note.w_username}</td>
                             <td>{note.w_date}</td>
@@ -57,7 +57,7 @@ const NoticePage = ({data}:NoticeDataType) => {
                 <div className='paging'>
                     <Pagination
                     postsPerPage={postsPerPage}
-                    totalPosts={(data as any).length}
+                    totalPosts={data.length}
                     paginate={setCurrentPage}
                     currentPage={currentPage}/>
                 </div>
